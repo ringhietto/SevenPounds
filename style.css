@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'craketest-regular';
+    src: url("fonts/craketest-regular.woff") format("opentype");
+}
+
+@font-face {
+    font-family: 'craketest-bold';
+    src: url("fonts/craketest-bold.woff") format("opentype");
+}
+
+@font-face {
+    font-family: 'craketest-light';
+    src: url("fonts/craketest-light.woff") format("opentype");
+}
+
+@font-face {
+    font-family: 'craketest-medium';
+    src: url("fonts/craketest-medium.woff") format("opentype");
+}
+
+@font-face {
+    font-family: 'craketest-semibold';
+    src: url("fonts/craketest-semibold.woff") format("opentype");
+}
+
+.background {
+    width: 1740px;
+    height: 5943px;
+    background-color: #030C2F;
+}
+
+.navbar {
+    display: flex;
+    padding: 35px 34px 35px 173px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 47px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.title {
+    font-size: 40px;
+    color: #CCF3FF;
+}
+
+.subtitle {
+    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+    color: #CCF3FF;
+}
+
+.connie {
+    width: 159px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background: var(--CONNIE, #90E4FF);
+}
