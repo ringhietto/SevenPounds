@@ -50,9 +50,6 @@
 }
 
 .connie {
-    width: 159px;
-    height: 36px;
-    flex-shrink: 0;
-    border-radius: 18px;
-    background: var(--CONNIE, #90E4FF);
+    color: white;
+    text-decoration: none;
 }
