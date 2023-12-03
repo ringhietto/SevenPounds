@@ -55,8 +55,7 @@ header {
 
     color: #CCF3FF;
     text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
-    font-size: 218px;
-    font-size: 20vh;
+    font-size: 23vh;
     font-style: normal;
     font-weight: 400;
     line-height: 99.973%;
@@ -68,13 +67,13 @@ header {
     color: #CCF3FF;
     text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
     font-family: Helvetica;
-    font-size: 42px;
+    font-size: 36px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
     text-align: center;
 
-    padding-bottom: 150px;
+    padding-bottom: 100px;
 }
 
 .frecce {
@@ -84,6 +83,22 @@ header {
     position: relative;
     animation-name: moving;
     animation-duration: 4s;
+    animation-iteration-count: infinite;
+    transition-timing-function: linear;
+    transition-timing-function: cubic-bezier(0, 0, 1, 1);
+
+    transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    transition-timing-function: ease-in-out;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+
+    transition-timing-function: ease-in;
+    transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+
+    transition-timing-function: ease-out;
+    transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+
 }
 
 @keyframes moving {
@@ -110,16 +125,31 @@ header {
 */
 
 .intro {
+    text-align: center;
+    justify-content: center;
+}
+
+.intro h1 {
     color: #CCF3FF;
     text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
-    font-size: 20px;
+    font-size: 45px;
     font-style: normal;
     font-weight: 300;
-    line-height: normal;
     text-align: center;
     padding-bottom: 150px;
-
+    font-family: Philosopher;
     padding-top: 150px;
+    padding-bottom: 106px;
+    justify-content: center;
+}
+
+.intro h5 {
+    text-align: center;
+    width: 838px;
+    display: inline-block;
+    color: #CCF3FF;
+    font-family: Helvetica;
+
 }
 
 
