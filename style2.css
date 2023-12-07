@@ -1,51 +1,57 @@
 @font-face {
     font-family: 'Philosopher';
-    src: url("fonts/Philosopher-Regular.ttf") format("opentype");
+    font-weight: 400;
+    src: url("fonts/Philosopher-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'PhilosopherItalic';
-    src: url("fonts/Philosopher-Italic.ttf") format("opentype");
+    font-family: 'Philosopher';
+    font-style: italic;
+    src: url("fonts/Philosopher-Italic.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'PhilosopherBold';
-    src: url("fonts/Philosopher-Bold.ttf") format("opentype");
+    src: url("fonts/Philosopher-Bold.ttf") format("truetype");
 }
 
-@font-face {
-    font-family: 'PhilosopherBoldItalic';
-    src: url("fonts/Philosopher-BoldItalic.ttf") format("opentype");
-}
 
 @font-face {
-    font-family: 'PhilosopherBoldItalic';
-    src: url("fonts/Philosopher-BoldItalic.ttf") format("opentype");
+    font-family: 'Philosopher';
+    font-weight: 700;
+    font-style: italic;
+    src: url("fonts/Philosopher-BoldItalic.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'Helvetica';
-    src: url("fonts/Helvetica.ttf") format("opentype");
+    font-weight: 400;
+    src: url("fonts/Helvetica.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'HelveticaLight';
-    src: url("fonts/helvetica-Light.ttf") format("opentype");
+    font-family: 'Helvetica';
+    font-weight: 300;
+    src: url("fonts/helvetica-Light.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'HelveticaBold';
-    src: url("fonts/Helvetica-Bold.ttf") format("opentype");
+    font-family: 'Helvetica';
+    font-weight: 700;
+    src: url("fonts/Helvetica-Bold.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'HelveticaOblique';
-    src: url("fonts/Helvetica-Oblique.ttf") format("opentype");
+    font-family: 'Helvetica';
+    font-style: italic;
+    src: url("fonts/Helvetica-Oblique.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'HelveticaBoldOblique';
-    src: url("fonts/Helvetica-Bold-Oblique.ttf") format("opentype");
+    font-family: 'Helvetica';
+    font-weight: 700;
+    font-style: italic;
+    src: url("fonts/Helvetica-Bold-Oblique.ttf") format("truetype");
 }
 
 .html {
@@ -87,7 +93,7 @@ header {
     text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
     font-size: 23vh;
     font-style: normal;
-    font-weight: 400;
+    font-weight: light;
     line-height: 99.973%;
     text-align: center;
     /* 217.94px */
@@ -95,13 +101,13 @@ header {
 
 .subtitle {
     color: #CCF3FF;
+    text-align: center;
     text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
     font-family: Helvetica;
-    font-size: 36px;
+    font-size: 26px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    text-align: center;
 
     padding-bottom: 100px;
 }
@@ -190,9 +196,19 @@ header {
     z-index: 100;
 }
 
+#medusa {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+}
+
+#tentacolobianco,
+#Vector-80 {
+    display: block;
+}
 
 .line-container {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
