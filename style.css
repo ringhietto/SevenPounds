@@ -1,26 +1,57 @@
 @font-face {
-    font-family: 'craketest-regular';
-    src: url("fonts/craketest-regular.woff") format("opentype");
+    font-family: 'Philosopher';
+    font-weight: 400;
+    src: url("fonts/Philosopher-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'craketest-bold';
-    src: url("fonts/craketest-bold.woff") format("opentype");
+    font-family: 'Philosopher';
+    font-style: italic;
+    src: url("fonts/Philosopher-Italic.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'craketest-light';
-    src: url("fonts/craketest-light.woff") format("opentype");
+    font-family: 'PhilosopherBold';
+    src: url("fonts/Philosopher-Bold.ttf") format("truetype");
+}
+
+
+@font-face {
+    font-family: 'Philosopher';
+    font-weight: 700;
+    font-style: italic;
+    src: url("fonts/Philosopher-BoldItalic.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'craketest-medium';
-    src: url("fonts/craketest-medium.woff") format("opentype");
+    font-family: 'Helvetica';
+    font-weight: 400;
+    src: url("fonts/Helvetica.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'craketest-semibold';
-    src: url("fonts/craketest-semibold.woff") format("opentype");
+    font-family: 'Helvetica';
+    font-weight: 300;
+    src: url("fonts/helvetica-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    font-weight: 700;
+    src: url("fonts/Helvetica-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    font-style: italic;
+    src: url("fonts/Helvetica-Oblique.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    font-weight: 700;
+    font-style: italic;
+    src: url("fonts/Helvetica-Bold-Oblique.ttf") format("truetype");
 }
 
 .html {
@@ -28,9 +59,10 @@
 }
 
 body {
-    font-family: craketest-regular;
+    padding-top: 20vh;
+    /* 280px */
+    font-family: Philosopher;
     margin: 0;
-    font-family: craketest-regular;
     background-image: url('assets/background.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -59,27 +91,137 @@ header {
 
     color: #CCF3FF;
     text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
-    font-size: 218px;
-    font-size: 20vh;
+    font-size: 23vh;
     font-style: normal;
-    font-weight: 400;
+    font-weight: light;
     line-height: 99.973%;
+    text-align: center;
     /* 217.94px */
 }
 
 .subtitle {
     color: #CCF3FF;
+    text-align: center;
     text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
     font-family: Helvetica;
-    font-size: 42px;
+    font-size: 26px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
 
-    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
-    color: #CCF3FF;
+    padding-bottom: 100px;
 }
 
+.frecce {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    position: relative;
+    animation-name: moving;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    transition-timing-function: linear;
+    transition-timing-function: cubic-bezier(0, 0, 1, 1);
+
+    transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    transition-timing-function: ease-in-out;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+
+    transition-timing-function: ease-in;
+    transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+
+    transition-timing-function: ease-out;
+    transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+
+}
+
+@keyframes moving {
+    0% {
+        top: 0px;
+    }
+
+    50% {
+        top: 15px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
+/*
+██╗███╗   ██╗████████╗██████╗  ██████╗ 
+██║████╗  ██║╚══██╔══╝██╔══██╗██╔═══██╗
+██║██╔██╗ ██║   ██║   ██████╔╝██║   ██║
+██║██║╚██╗██║   ██║   ██╔══██╗██║   ██║
+██║██║ ╚████║   ██║   ██║  ██║╚██████╔╝
+╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ 
+*/
+
+.intro {
+    text-align: center;
+    justify-content: center;
+}
+
+.intro h1 {
+    color: #CCF3FF;
+    text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 150px;
+    font-family: Philosopher;
+    padding-top: 150px;
+    padding-bottom: 106px;
+    justify-content: center;
+}
+
+.intro h5 {
+    text-align: center;
+    width: 838px;
+    display: inline-block;
+    color: #CCF3FF;
+    font-family: Helvetica;
+    justify-content: left;
+
+}
+
+
+
+
+.tentacles {
+    z-index: 100;
+}
+
+#medusa {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+}
+
+#tentacolobianco,
+#Vector-80 {
+    display: block;
+}
+
+.line-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+svg {
+    display: inline-block;
+    height: 100%;
+
+}
 
 /* 
 ███╗   ██╗ █████╗ ██╗   ██╗
@@ -88,7 +230,7 @@ header {
 ██║╚██╗██║██╔══██║╚██╗ ██╔╝
 ██║ ╚████║██║  ██║ ╚████╔╝ 
 ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝                              
-*/
+
 
 .nav {
     display: flex;
@@ -149,7 +291,7 @@ a.Connie {
     color: black;
 }
 
-
+*/
 
 
 
@@ -210,7 +352,7 @@ p.matteo {
 ╚════██║██║     ██╔══██╗██║   ██║██║     ██║     ██╔══╝  ██╔══██╗
 ███████║╚██████╗██║  ██║╚██████╔╝███████╗███████╗███████╗██║  ██║
 ╚══════╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝
-*/
+
 
 ::-webkit-scrollbar {
     width: 12px;
@@ -421,13 +563,24 @@ p.matteo {
 }
 
 /*
+███████╗██████╗ ███████╗ ██████╗ ██████╗███████╗
+██╔════╝██╔══██╗██╔════╝██╔════╝██╔════╝██╔════╝
+█████╗  ██████╔╝█████╗  ██║     ██║     █████╗  
+██╔══╝  ██╔══██╗██╔══╝  ██║     ██║     ██╔══╝  
+██║     ██║  ██║███████╗╚██████╗╚██████╗███████╗
+╚═╝     ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝╚══════╝
+*/
+
+
+
+/*
 ███╗   ██╗ █████╗ ██╗   ██╗
 ████╗  ██║██╔══██╗██║   ██║
 ██╔██╗ ██║███████║██║   ██║
 ██║╚██╗██║██╔══██║╚██╗ ██╔╝
 ██║ ╚████║██║  ██║ ╚████╔╝ 
 ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  
-*/
+
 
 .nav {
     opacity: 0;
@@ -490,3 +643,5 @@ p.matteo {
 .nav:nth-child(18) {
     animation: fade-in 0.8s 2.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
+*/
