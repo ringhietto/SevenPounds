@@ -27,16 +27,17 @@
     -->
 
     <header>
-        <div class="title" style="">
+        <div class="title" style="font-size:12vw;">
             SEVEN <br>POUNDS
         </div>
 
-        <div class="subtitle">
+        <div class="subtitle" style="font-size:1.5vw;">
             The film narrates an introspective journey to discover <br>the desires and values that sustain the
             protagonist's <br>
             inner life
         </div>
     </header>
+    <br>
 
     <!--
     <div class="nav">
@@ -54,7 +55,8 @@
     -->
 
     <div class="frecce">
-        <a classc href=""><img src="assets/arrows.svg"></a>
+        <a classc href="">
+            <img src="assets/arrows.svg"></a>
     </div>
 
     <!--
@@ -68,25 +70,21 @@
 
 
     <div class="intro">
-        <h1>
+        <h1 style="font-size:2vw;">
             About it
         </h1>
-        <h5>
+        <h5 style="font-size:1vw;">
             "Seven Pounds" is a 2008 drama film that revolves around the main character, played by Will Smith, who plays
-            the role of Ben Thomas, a man with a dark secret that drives him to seek forgiveness through acts of
+            the role of Tim Thomas, a man with a dark secret that drives him to seek forgiveness through acts of
             kindness and selflessness.
-
-            This platform is designed to offer a unique and detailed view of the temporal evolution of the importance of
-            key characters within the plot, taking advantage of a sophisticated line graph distinctively arranged within
-            a jellyfish.
-
-            Through an immersive visual experience, we invite you to explore the complexity of the relationships and
-            dynamics of the protagonists throughout the film. Each tentacle of the jellyfish represents a character. The
-            length and thickness of the line that accurately reflects the actor's role and importance at a particular
-            stage of the story.
-            Our goal is to offer a unique and in-depth perspective on the plot, allowing you to grasp the nuances of the
-            interactions between the protagonists and appreciate their individual growth over the course of the
-            narrative.
+            <br>
+            <br>
+            The film is composed of a sophisticated plot full of flashbacks, leaving the viewer with a confused idea
+            about the time sequence of the scenes and the presence of the characters in the film.
+            <br>
+            <br>
+            This website offers a comprehensive and exhaustive perspective of the temporal evolution of the characters'
+            importance within the plot, taking advantage of a line graph arranged distinctly within a jellyfish.
 
 
         </h5>
@@ -154,6 +152,7 @@
 ██████╔╝╚██████╔╝███████╗███████╗███████╗
 ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚══════╝
 -->
+
 
 
 
@@ -405,19 +404,19 @@
 
 
     <!--
-    <script class="tentacles">
-        let svg = d3.select('#svg1')
-            .attr('width', 100)
-            .attr('height', 300)
+<script class="tentacles">
+    let svg = d3.select('#svg1')
+        .attr('width', 100)
+        .attr('height', 300)
 
-        svg.append('line')
-            .style("stroke", "white")
-            .style("stroke-width", 50)
-            .attr("x1", 100)
-            .attr("y1", 800)
-            .attr("x2", 300)
-            .attr("y2", 100);
-    </script>
+    svg.append('line')
+        .style("stroke", "white")
+        .style("stroke-width", 50)
+        .attr("x1", 100)
+        .attr("y1", 800)
+        .attr("x2", 300)
+        .attr("y2", 100);
+</script>
 -->
 
     <footer>
@@ -434,28 +433,104 @@
         <br>
     </footer>
 
+    <!--
+████████╗██████╗  █████╗  ██████╗██╗  ██╗██╗███╗   ██╗ ██████╗ 
+╚══██╔══╝██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██║████╗  ██║██╔════╝ 
+██║   ██████╔╝███████║██║     █████╔╝ ██║██╔██╗ ██║██║  ███╗
+██║   ██╔══██╗██╔══██║██║     ██╔═██╗ ██║██║╚██╗██║██║   ██║
+██║   ██║  ██║██║  ██║╚██████╗██║  ██╗██║██║ ╚████║╚██████╔╝
+╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝  
+-->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/MotionPathPlugin.min.js"></script>
 
     <script>
 
+        const mappedCoordinates = {
+            bianco: mapPath('tentacolobianco'),
+        }
+
+        function mapPath(id) {
+            const el = document.getElementById(id)
+            const totalLength = el.getTotalLength()
+
+            let coordinates = []
+
+
+            for (let index = 0; index < totalLength; index += .1) {
+                const { x, y } = el.getPointAtLength(index);
+
+
+                coordinates.push({ x, y })
+
+
+                /**
+                 *             
+                 * 
+                 * MISTER ANZIAAAAA
+                 * 
+                 * 
+                 * 
+                 * **/
+            }
+
+
+
+            coordinates.sort((a, b) => a.y - b.y)
+
+            let maxY = coordinates[coordinates.length - 1].y
+
+
+
+            return {
+                coordinates,
+                maxY
+            }
+
+
+        }
+
+        function getKeyframes(id) {
+            const { coordinates, maxY } = mappedCoordinates[id]
+
+
+            const keyframes = []
+            for (let index = 0; index < 2000; index++) {
+                keyframes.push(coordinates.find((c) => c.y > (maxY * index / 2000)))
+            }
+
+            return keyframes
+        }
+        function getXAtProgress(id, progress) {
+            const { coordinates, maxY } = mappedCoordinates[id]
+
+            const y = maxY * progress
+
+            return coordinates.find((c) => c.y > y).x
+        }
+
+        console.log(getKeyframes('bianco'));
         gsap.registerPlugin(ScrollTrigger)
-        gsap.registerPlugin(MotionPathPlugin)
         gsap.to('#bianco-label', {
+
+            keyframes: {
+                x: getKeyframes('bianco').map((c) => c.x),
+                y: getKeyframes('bianco').map((c) => c.y),
+            },
             scrollTrigger: {
                 trigger: '#tentacolobianco',
                 start: 'top 50%',
                 markers: true,
-                //  end: 'bottom 50%',
                 end: 'bottom 50%',
+                // end: '',
                 scrub: .1,
-                onUpdate: ({ progress }) => console.log(progress) //  info for position
+                //  onUpdate: ({progress}) => console.log(progress) //  info for position
             },
-            transformOrigin: "50% 50%",
+            //transformOrigin: "50% 50%",
             // duration: 50,
             // loop: true,
-            motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
+            // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
 
         })
 
