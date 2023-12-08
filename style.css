@@ -172,21 +172,22 @@ header {
     font-style: normal;
     font-weight: 300;
     text-align: center;
-    padding-bottom: 150px;
     font-family: Philosopher;
     padding-top: 150px;
-    padding-bottom: 106px;
     justify-content: center;
+
+    font-size: 3vw
 }
 
 .intro h5 {
-    text-align: center;
+    text-align: left;
     width: 838px;
     display: inline-block;
     color: #CCF3FF;
     font-family: Helvetica;
-    justify-content: left;
+    font-weight: 300;
 
+    font-size: 1vw
 }
 
 
