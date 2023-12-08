@@ -243,17 +243,17 @@
 
 <!--
 <script class="tentacles">
-    let svg = d3.select('#svg1')
-        .attr('width', 100)
-        .attr('height', 300)
+let svg = d3.select('#svg1')
+    .attr('width', 100)
+    .attr('height', 300)
 
-    svg.append('line')
-        .style("stroke", "white")
-        .style("stroke-width", 50)
-        .attr("x1", 100)
-        .attr("y1", 800)
-        .attr("x2", 300)
-        .attr("y2", 100);
+svg.append('line')
+    .style("stroke", "white")
+    .style("stroke-width", 50)
+    .attr("x1", 100)
+    .attr("y1", 800)
+    .attr("x2", 300)
+    .attr("y2", 100);
 </script>
 -->
 
@@ -334,7 +334,7 @@
 
 
         const keyframes = []
-        for (let index = 0; index < 2000; index++) {
+        for (let index = 0; index < 100; index++) {
             keyframes.push(coordinates.find((c) => c.y > (maxY * index / 2000)))
         }
 
