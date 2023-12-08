@@ -121,15 +121,6 @@
     -->
 
 
-    <span id="bianco-label" class=""
-        style="display:inline-block; background-color:  white; border: 1px solid black; color:black; position: sticky; top: 50vh;">
-        BIANCO
-    </span>
-
-    <span id="rosso-label" class=""
-        style="display:inline-block; background-color:  red; border: 1px solid black; color:black; position: sticky; top: 50vh;">
-        ROSSO
-    </span>
 
 
     </div>
@@ -154,7 +145,19 @@
 ██║ ╚═╝ ██║███████╗██████╔╝╚██████╔╝███████║██║  ██║
 ╚═╝     ╚═╝╚══════╝╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝
 -->
-    <svg viewBox="0 0 501 2810" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+
+<div id="medusa-wrapper">
+
+    <span id="bianco-label" class="badge-personaggio"
+        style="display:inline-block; background-color:  white; border: 1px solid black; color:black; ">
+        BIANCO
+    </span>
+
+    <span id="rosso-label" class="badge-personaggio"
+        style="display:inline-block; background-color:  red; border: 1px solid black; color:black; position: sticky; top: 50vh;">
+        ROSSO
+    </span>
+<svg viewBox="0 0 501 2810" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
         <g id="Group 35">
             <path id="Vector 258"
                 d="M172.666 496.973C99.5892 567.343 46.0277 547.685 37.7658 614.067C22.34 738.009 28.6487 1281.68 37.4806 1576.03C40.8573 1688.57 95.658 1761.7 297.596 1832.59"
@@ -384,7 +387,7 @@
             </linearGradient>
         </defs>
     </svg>
-
+</div>
 
 
 
@@ -432,9 +435,10 @@ svg.append('line')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
 
     <script>
+        const svgVBox = {x: 508,y: 2810}
 
         const mappedCoordinates = {
-            bianco: mapPath('tentacolobianco'),
+            bianco: getKeyframes(mapPath('tentacolobianco')),
         }
 
         function mapPath(id) {
@@ -444,56 +448,56 @@ svg.append('line')
             let coordinates = []
 
 
-            for (let index = 0; index < totalLength; index += .1) {
+            for (let index = 0; index < totalLength; index += .3) {
                 const { x, y } = el.getPointAtLength(index);
 
 
                 coordinates.push({ x, y })
 
             }
-
-
-
-            coordinates.sort((a, b) => a.y - b.y)
-
+ 
             let maxY = coordinates[coordinates.length - 1].y
 
 
 
             return {
                 coordinates,
-                maxY
+                maxY,
+                minY: coordinates[0].y
             }
 
 
         }
 
-        function getKeyframes(id) {
-            const { coordinates, maxY } = mappedCoordinates[id]
+
+        function getKeyframes(coords) {
+            const { coordinates, maxY, minY } = coords
 
 
-            const keyframes = []
-            for (let index = 0; index < 100; index++) {
-                keyframes.push(coordinates.find((c) => c.y > (maxY * index / 2000)))
+
+
+            const keyframes = {x: [], y: []}
+
+            const ITERATIONS = 1000;
+            for (let index = 0; index < ITERATIONS; index++) {
+
+                const progress = index / ITERATIONS
+                let coor = coordinates.find((c) => c.y > minY + (maxY - minY) * progress )
+                keyframes.x.push((100 *coor.x / svgVBox.x).toFixed(4)+ "%")
+                keyframes.y.push((100 * coor.y / svgVBox.y) .toFixed(4)+ "%" )
             }
+
+            console.log('map finished', keyframes);
 
             return keyframes
-        }
-        function getXAtProgress(id, progress) {
-            const { coordinates, maxY } = mappedCoordinates[id]
-
-            const y = maxY * progress
-
-            return coordinates.find((c) => c.y > y).x
-        }
-
-        console.log(getKeyframes('bianco'));
+        } 
+ 
         gsap.registerPlugin(ScrollTrigger)
         gsap.to('#bianco-label', {
 
             keyframes: {
-                x: getKeyframes('bianco').map((c) => c.x),
-                y: getKeyframes('bianco').map((c) => c.y),
+                left: mappedCoordinates.bianco.x,
+                top: mappedCoordinates.bianco.y,
             },
             scrollTrigger: {
                 trigger: '#tentacolobianco',
