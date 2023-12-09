@@ -202,16 +202,18 @@ header {
     width: 100%;
     display: block;
 }
-#medusa-wrapper{
+
+#medusa-wrapper {
     position: relative;
 }
+
 .badge-personaggio {
     position: absolute;
 }
 
 
 #tentacolobianco,
-#Vector-80 {
+#holly #Vector-80 {
     display: block;
 }
 
