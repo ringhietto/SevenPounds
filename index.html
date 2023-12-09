@@ -38,20 +38,7 @@
         </div>
     </header>
 
-    <!--
-    <div class="nav">
-        <div class="names">
-            <a class="Emily">EMILY</a>
-            <a class="Holly">HOLLY</a>
-            <a class="Ben">BEN</a>
-            <a class="Nicholas">NICHOLAS</a>
-            <a class="Ezra">EZRA</a>
-            <a class="George">GEORGE</a>
-            <a class="Connie">CONNIE</a>
-        </div>
-    </div>
-    <br>
-    -->
+
 
     <div class="frecce">
         <a classc href=""><img src="assets/arrows.svg"></a>
@@ -154,11 +141,44 @@
         </span>
 
         <span id="holly-label" class="badge-personaggio"
-            style="display:inline-block; background-color:  #62B4FF; border: 1px solid black; border-radius: 10px; color:black; ">
+            style="display:inline-block; background-color:  #62B4FF; border-radius: 10px; color:black; width: 2vw; text-align: center; width: 5.5vw">
             HOLLY
         </span>
 
-        <svg   viewBox="0 0 1863 9858" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <span id="ezra-label" class="badge-personaggio"
+            style="display:inline-block; background-color:  #5772FF; border-radius: 10px; color:black; width: 2vw; text-align: center;">
+            EZRA
+        </span>
+
+        <span id="ben-label" class="badge-personaggio"
+            style="display:inline-block; background-color:  #77FF85;  border-radius: 10px; color:black; width: 2vw; text-align: center;">
+            BEN
+        </span>
+
+        <span id="emily-label" class="badge-personaggio"
+            style="display:inline-block; background-color:  #FA8AE8; border-radius: 10px; color:black; width: 2vw; text-align: center;">
+            EMILY
+        </span>
+
+        <span id="dan-label" class="badge-personaggio"
+            style="display:inline-block; background-color:  #FCFF5F; border-radius: 10px; color:black; width: 2vw; text-align: center;">
+            DAN
+        </span>
+
+        <span id="george-label" class="badge-personaggio"
+            style="display:inline-block; background-color:  #7FFFF0;  border-radius: 10px; color:black; width: 2vw; text-align: center;">
+            GEORGE
+        </span>
+
+        <span id="connie-label" class="badge-personaggio"
+            style="display:inline-block; background-color:  #FF5F5F;border-radius: 10px; color:black; width: 2vw; text-align: center;width: 4vw">
+            CONNIE
+        </span>
+
+
+
+
+        <svg viewBox="0 0 1863 9858" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Group 37">
                 <g id="LINEE SCENE">
                     <path id="Vector 279" d="M2 596H1850" stroke="white" stroke-opacity="0.2" stroke-width="2" />
@@ -311,8 +331,8 @@
                         stroke="#627BFD" stroke-opacity="0.2" stroke-width="20" />
                 </g>
                 <circle id="Ellipse 255" cx="868" cy="9822" r="16" fill="#627BFC" />
-                <g id="CONNIE">
-                    <path id="Vector 275"
+                <g id="">
+                    <path id="CONNIE"
                         d="M1150.5 2972.5C1150.5 3043.5 1158 3136.17 1463 3127.5C1543 3125.22 1589 3172.5 1589 3259L1606 4027C1606 4208 1431 4419.2 1245 4436"
                         stroke="#FF5F5F" stroke-opacity="0.2" stroke-width="17" />
                     <path id="Vector 287_2" d="M1382.72 2897.12C1261.23 2900.8 1150.79 2914.1 1150.16 2974.86"
@@ -333,8 +353,8 @@
                 </g>
                 <circle id="Ellipse 257" cx="1222" cy="3093" r="16" fill="#7EFDEE" />
                 <circle id="Ellipse 258" cx="1331" cy="2833" r="16" fill="#61B2FC" />
-                <g id="HOLLY">
-                    <path id="Vector 277" d="M1190 2718C1297.5 2749.5 1330.5 2797.5 1330.5 2833.5" stroke="#61B2FC"
+                <g id>
+                    <path id="HOLLY" d="M1190 2718C1297.5 2749.5 1330.5 2797.5 1330.5 2833.5" stroke="#61B2FC"
                         stroke-width="17" />
                     <path id="Vector 278"
                         d="M1194 2718C1035 2672.5 982 2654.17 821.5 2616C377.5 2510.4 241.5 2632 241.5 2381.5V549C241.5 356 324 233.2 650 152"
@@ -395,10 +415,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
 
     <script>
-        const svgVBox = { x: 1863 , y: 9858 }
+        const svgVBox = { x: 1863, y: 9858 }
 
         const mappedCoordinates = {
             bianco: getKeyframes(mapPath('tentacolobianco')),
+            holly: getKeyframes(mapPath('HOLLY')),
+            connie: getKeyframes(mapPath('CONNIE')),
         }
 
         function mapPath(id) {
@@ -472,8 +494,51 @@
             // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
 
         })
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.to('#holly-label', {
 
+            keyframes: {
+                left: mappedCoordinates.holly.x,
+                top: mappedCoordinates.bianco.y,
+            },
+            scrollTrigger: {
+                trigger: '#HOLLY',
+                start: 'top 50%',
+                markers: true,
+                end: 'bottom 50%',
+                // end: '',
+                scrub: .1,
+                //  onUpdate: ({progress}) => console.log(progress) //  info for position
+            },
+            //transformOrigin: "50% 50%",
+            // duration: 50,
+            // loop: true,
+            // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
 
+        })
+
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.to('#connie-label', {
+
+            keyframes: {
+                left: mappedCoordinates.connie.x,
+                top: mappedCoordinates.bianco.y,
+            },
+            scrollTrigger: {
+                trigger: '#CONNIE',
+                start: 'top 50%',
+                markers: true,
+                end: 'bottom 50%',
+                // end: '',
+                scrub: .1,
+                //  onUpdate: ({progress}) => console.log(progress) //  info for position
+            },
+            //transformOrigin: "50% 50%",
+            // duration: 50,
+            // loop: true,
+            // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
+
+        })
 
     </script>
 

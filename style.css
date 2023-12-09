@@ -213,7 +213,7 @@ header {
 
 
 #tentacolobianco,
-#holly #Vector-80 {
+#Vector-80 {
     display: block;
 }
 
@@ -232,78 +232,6 @@ svg {
     height: 100%;
 
 }
-
-/* 
-███╗   ██╗ █████╗ ██╗   ██╗
-████╗  ██║██╔══██╗██║   ██║
-██╔██╗ ██║███████║██║   ██║
-██║╚██╗██║██╔══██║╚██╗ ██╔╝
-██║ ╚████║██║  ██║ ╚████╔╝ 
-╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝                              
-
-
-.nav {
-    display: flex;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-}
-
-.names {
-    display: flex;
-    justify-content: center;
-    gap: 1vh;
-    position: sticky;
-    top: 0;
-}
-
-.names a {
-    height: 3vh;
-    margin: 10px;
-    width: 12vh;
-    border-radius: 150px;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    font-size: 2vh;
-}
-
-a.Emily {
-    color: black;
-    background-color: #F7B9F4;
-}
-
-a.Holly {
-    background-color: #4457B0;
-}
-
-a.Ben {
-    background-color: white;
-    color: black;
-}
-
-a.Nicholas {
-    background-color: #9464E2;
-}
-
-.Ezra {
-    background-color: #1347FF;
-}
-
-a.George {
-    background-color: #F511EC;
-    color: black;
-}
-
-a.Connie {
-    background-color: #90E4FF;
-    color: black;
-}
-
-*/
-
-
 
 
 /* 
@@ -354,35 +282,6 @@ p.matteo {
     padding-left: 10px;
     padding-right: 10px;
 }
-
-/* 
-███████╗ ██████╗██████╗  ██████╗ ██╗     ██╗     ███████╗██████╗ 
-██╔════╝██╔════╝██╔══██╗██╔═══██╗██║     ██║     ██╔════╝██╔══██╗
-███████╗██║     ██████╔╝██║   ██║██║     ██║     █████╗  ██████╔╝
-╚════██║██║     ██╔══██╗██║   ██║██║     ██║     ██╔══╝  ██╔══██╗
-███████║╚██████╗██║  ██║╚██████╔╝███████╗███████╗███████╗██║  ██║
-╚══════╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝
-
-
-::-webkit-scrollbar {
-    width: 12px;
-    background: transparent;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(transparent, #030C2F);
-    border-radius: 6px;
-    height: 300px;
-}
-
-::-webkit-scrollbar-thumb-hover {
-    background: linear-gradient(transparent, #00c6ff);
-}
-
 
 
 /*
@@ -579,79 +478,4 @@ p.matteo {
 ██╔══╝  ██╔══██╗██╔══╝  ██║     ██║     ██╔══╝  
 ██║     ██║  ██║███████╗╚██████╗╚██████╗███████╗
 ╚═╝     ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝╚══════╝
-*/
-
-
-
-/*
-███╗   ██╗ █████╗ ██╗   ██╗
-████╗  ██║██╔══██╗██║   ██║
-██╔██╗ ██║███████║██║   ██║
-██║╚██╗██║██╔══██║╚██╗ ██╔╝
-██║ ╚████║██║  ██║ ╚████╔╝ 
-╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  
-
-
-.nav {
-    opacity: 0;
-    filter: blur(4px);
-    animation: scale 1s forwards cubic-bezier(0.5, 1, 0.89, 1);
-}
-
-.nav:nth-child(1) {
-    animation: fade-in 1.9s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(2) {
-    animation: fade-in 1.9s 1.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(7) {
-    animation: fade-in 0.8s 1.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(8) {
-    animation: fade-in 0.8s 1.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(9) {
-    animation: fade-in 0.8s 1.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(10) {
-    animation: fade-in 0.8s 2s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(11) {
-    animation: fade-in 0.8s 2.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(12) {
-    animation: fade-in 0.8s 2.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(13) {
-    animation: fade-in 0.8s 2.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(14) {
-    animation: fade-in 0.8s 2.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(15) {
-    animation: fade-in 0.8s 2.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(16) {
-    animation: fade-in 0.8s 2.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(17) {
-    animation: fade-in 0.8s 2.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-.nav:nth-child(18) {
-    animation: fade-in 0.8s 2.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
 */
