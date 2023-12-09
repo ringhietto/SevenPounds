@@ -197,7 +197,7 @@ header {
     z-index: 100;
 }
 
-#medusa {
+#medusa-wrapper svg {
     max-width: 100%;
     width: 100%;
     display: block;

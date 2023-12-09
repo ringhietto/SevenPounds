@@ -158,7 +158,7 @@
             HOLLY
         </span>
 
-        <svg width="1863" height="9858" viewBox="0 0 1863 9858" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg   viewBox="0 0 1863 9858" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Group 37">
                 <g id="LINEE SCENE">
                     <path id="Vector 279" d="M2 596H1850" stroke="white" stroke-opacity="0.2" stroke-width="2" />
@@ -395,7 +395,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
 
     <script>
-        const svgVBox = { x: 508, y: 2810 }
+        const svgVBox = { x: 1863 , y: 9858 }
 
         const mappedCoordinates = {
             bianco: getKeyframes(mapPath('tentacolobianco')),
@@ -407,8 +407,9 @@
 
             let coordinates = []
 
+            const step = totalLength / 4000
 
-            for (let index = 0; index < totalLength; index += .3) {
+            for (let index = 0; index < totalLength; index += step) {
                 const { x, y } = el.getPointAtLength(index);
 
 
@@ -432,9 +433,6 @@
 
         function getKeyframes(coords) {
             const { coordinates, maxY, minY } = coords
-
-
-
 
             const keyframes = { x: [], y: [] }
 
@@ -460,7 +458,7 @@
                 top: mappedCoordinates.bianco.y,
             },
             scrollTrigger: {
-                trigger: '#bianco-label',
+                trigger: '#tentacolobianco',
                 start: 'top 50%',
                 markers: true,
                 end: 'bottom 50%',
