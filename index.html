@@ -97,18 +97,19 @@
             align-items: center;
             justify-content: center;
 
-            border-radius: 10px;
+            border-radius: 19px;
             width: 3.3vw;
             height: 1.5vw;
             margin-left: -24px;            
-            /*
-:hover {
- height: 300px;
- width: 200px;
-}
-            */
-
             border: 1px black ;">
+
+            <style>
+                #bianco-label:hover {
+                    background-color: black;
+                    color: white;
+                }
+            </style>
+
             TIM
         </span>
 
@@ -119,7 +120,7 @@
             align-items: center;
             justify-content: center;
             
-            border-radius: 10px;
+            border-radius: 19px;
             width: 5vw;
             height: 1.5vw;
             margin-left: -36px;">
@@ -133,7 +134,7 @@
         align-items: center;
         justify-content: center;
         
-        border-radius: 10px;
+        border-radius: 19px;
         width: 4vw;
         height: 1.5vw;
         margin-left: -29px;">
@@ -147,7 +148,7 @@
             align-items: center;
             justify-content: center;
 
-            border-radius: 10px;
+            border-radius: 19px;
             width: 3.5vw;
             height: 1.5vw;
             margin-left: -28px;">
@@ -161,7 +162,7 @@
         align-items: center;
         justify-content: center;
 
-        border-radius: 10px; 
+        border-radius: 19px; 
         width: 4.5vw;
         height: 1.5vw;
         margin-left: -36px;">
@@ -189,7 +190,7 @@
             align-items: center;
             justify-content: center;
             
-            border-radius: 10px;
+            border-radius: 19px;
             width: 6vw;
             height: 1.5vw;
             margin-left: -41px;
@@ -204,7 +205,7 @@
             align-items: center;
             justify-content: center;
             
-            border-radius: 10px;
+            border-radius: 19px;
             width: 5.5vw;
             height: 1.5vw;
             margin-left: -42px;">
@@ -511,19 +512,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
 
+
+
     <script>
         const svgVBox = { x: 1863, y: 9858 }
 
-        const mappedCoordinates = {
-            bianco: getKeyframes(mapPath('tentacolobianco')),
-            holly: getKeyframes(mapPath('true-holly')),
-            ezra: getKeyframes(mapPath('true-ezra')),
-            connie: getKeyframes(mapPath('true-connie')),
-            george: getKeyframes(mapPath('true-george')),
-            den: getKeyframes(mapPath('true-den')),
-            emily: getKeyframes(mapPath('true-emily')),
-            ben: getKeyframes(mapPath('true-ben')),
-        }
+        const ITERATIONS = 1000
 
         function mapPath(id) {
             const el = document.getElementById(id)
@@ -531,19 +525,14 @@
 
             let coordinates = []
 
-            const step = totalLength / 4000
+            const step = totalLength / (ITERATIONS * 2)
 
             for (let index = 0; index < totalLength; index += step) {
                 const { x, y } = el.getPointAtLength(index);
-
-
                 coordinates.push({ x, y })
-
             }
 
             let maxY = coordinates[coordinates.length - 1].y
-
-
 
             return {
                 coordinates,
@@ -560,7 +549,6 @@
 
             const keyframes = { x: [], y: [] }
 
-            const ITERATIONS = 1000;
             for (let index = 0; index < ITERATIONS; index++) {
 
                 const progress = index / ITERATIONS
@@ -574,254 +562,54 @@
             return keyframes
         }
 
-        // ██████╗ ███████╗███╗   ██╗
-        // ██╔══██╗██╔════╝████╗  ██║
-        // ██████╔╝█████╗  ██╔██╗ ██║
-        // ██╔══██╗██╔══╝  ██║╚██╗██║
-        // ██████╔╝███████╗██║ ╚████║
-        // ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+
+        function animateOnScroll(badgeId, pathId) {
+            const coordinates = getKeyframes(mapPath(pathId))
+
+            gsap.to('#' + badgeId, {
+                keyframes: {
+                    left: coordinates.x,
+                    top: coordinates.y,
+                },
+                scrollTrigger: {
+                    trigger: '#' + pathId,
+                    start: 'top 50%',
+                    markers: true,
+                    end: 'bottom 50%',
+                    // end: '',
+                    scrub: .1,
+                    //  onUpdate: ({progress}) => console.log(progress) //  info for position
+                },
+                transformOrigin: "-50% -50%",
+                // duration: 50,
+                // loop: true,
+                // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
+
+            })
+        }
 
 
-        gsap.registerPlugin(ScrollTrigger)
-        gsap.to('#bianco-label', {
-
-            keyframes: {
-                left: mappedCoordinates.bianco.x,
-                top: mappedCoordinates.bianco.y,
-            },
-            scrollTrigger: {
-                trigger: '#tentacolobianco',
-                start: 'top 50%',
-                markers: true,
-                end: 'bottom 50%',
-                // end: '',
-                scrub: .1,
-                //  onUpdate: ({progress}) => console.log(progress) //  info for position
-            },
-            //transformOrigin: "50% 50%",
-            // duration: 50,
-            // loop: true,
-            // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
-
-        })
-
-
-        // ██╗  ██╗ ██████╗ ██╗     ██╗  ██╗   ██╗
-        // ██║  ██║██╔═══██╗██║     ██║  ╚██╗ ██╔╝
-        // ███████║██║   ██║██║     ██║   ╚████╔╝ 
-        // ██╔══██║██║   ██║██║     ██║    ╚██╔╝  
-        // ██║  ██║╚██████╔╝███████╗███████╗██║   
-        // ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚═╝   
-
-
-        gsap.registerPlugin(ScrollTrigger)
-        gsap.to('#holly-label', {
-
-            keyframes: {
-                left: mappedCoordinates.holly.x,
-                top: mappedCoordinates.holly.y,
-            },
-            scrollTrigger: {
-                trigger: '#true-holly',
-                start: 'top 50%',
-                markers: true,
-                end: 'bottom 50%',
-                // end: '',
-                scrub: .1,
-                //  onUpdate: ({progress}) => console.log(progress) //  info for position
-            },
-            //transformOrigin: "50% 50%",
-            // duration: 50,
-            // loop: true,
-            // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
-
-        })
-
-        // ███████╗███████╗██████╗  █████╗ 
-        // ██╔════╝╚══███╔╝██╔══██╗██╔══██╗
-        // █████╗    ███╔╝ ██████╔╝███████║
-        // ██╔══╝   ███╔╝  ██╔══██╗██╔══██║
-        // ███████╗███████╗██║  ██║██║  ██║
-        // ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝
-
-        gsap.registerPlugin(ScrollTrigger)
-        gsap.to('#ezra-label', {
-
-            keyframes: {
-                left: mappedCoordinates.ezra.x,
-                top: mappedCoordinates.ezra.y,
-            },
-            scrollTrigger: {
-                trigger: '#true-ezra',
-                start: 'top 50%',
-                markers: true,
-                end: 'bottom 50%',
-                // end: '',
-                scrub: .1,
-                //  onUpdate: ({progress}) => console.log(progress) //  info for position
-            },
-            //transformOrigin: "50% 50%",
-            // duration: 50,
-            // loop: true,
-            // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
-
-        })
-
-        //  ██████╗ ██████╗ ███╗   ██╗███╗   ██╗██╗███████╗
-        // ██╔════╝██╔═══██╗████╗  ██║████╗  ██║██║██╔════╝
-        // ██║     ██║   ██║██╔██╗ ██║██╔██╗ ██║██║█████╗  
-        // ██║     ██║   ██║██║╚██╗██║██║╚██╗██║██║██╔══╝  
-        // ╚██████╗╚██████╔╝██║ ╚████║██║ ╚████║██║███████╗
-        // ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝╚══════╝
-
-        gsap.registerPlugin(ScrollTrigger)
-        gsap.to('#connie-label', {
-
-            keyframes: {
-                left: mappedCoordinates.connie.x,
-                top: mappedCoordinates.connie.y,
-            },
-            scrollTrigger: {
-                trigger: '#true-connie',
-                start: 'top 50%',
-                markers: true,
-                end: 'bottom 50%',
-                // end: '',
-                scrub: .1,
-                //  onUpdate: ({progress}) => console.log(progress) //  info for position
-            },
-            //transformOrigin: "50% 50%",
-            // duration: 50,
-            // loop: true,
-            // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
-
-        })
-
-        //  ██████╗ ███████╗ ██████╗ ██████╗  ██████╗ ███████╗
-        // ██╔════╝ ██╔════╝██╔═══██╗██╔══██╗██╔════╝ ██╔════╝
-        // ██║  ███╗█████╗  ██║   ██║██████╔╝██║  ███╗█████╗
-        // ██║   ██║██╔══╝  ██║   ██║██╔══██╗██║   ██║██╔══╝
-        // ╚██████╔╝███████╗╚██████╔╝██║  ██║╚██████╔╝███████╗
-        // ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
-
-        gsap.registerPlugin(ScrollTrigger)
-        gsap.to('#george-label', {
-
-            keyframes: {
-                left: mappedCoordinates.george.x,
-                top: mappedCoordinates.george.y,
-            },
-            scrollTrigger: {
-                trigger: '#true-george',
-                start: 'top 50%',
-                markers: true,
-                end: 'bottom 50%',
-                // end: '',
-                scrub: .1,
-                //  onUpdate: ({progress}) => console.log(progress) //  info for position
-            },
-            //transformOrigin: "50% 50%",
-            // duration: 50,
-            // loop: true,
-            // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
-
-        })
-
-        // ██████╗ ███████╗███╗   ██╗
-        // ██╔══██╗██╔════╝████╗  ██║
-        // ██║  ██║█████╗  ██╔██╗ ██║
-        // ██║  ██║██╔══╝  ██║╚██╗██║
-        // ██████╔╝███████╗██║ ╚████║
-        // ╚═════╝ ╚══════╝╚═╝  ╚═══╝
-
-        gsap.registerPlugin(ScrollTrigger)
-        gsap.to('#den-label', {
-
-            keyframes: {
-                left: mappedCoordinates.den.x,
-                top: mappedCoordinates.den.y,
-            },
-            scrollTrigger: {
-                trigger: '#true-den',
-                start: 'top 50%',
-                markers: true,
-                end: 'bottom 50%',
-                // end: '',
-                scrub: .1,
-                //  onUpdate: ({progress}) => console.log(progress) //  info for position
-            },
-            //transformOrigin: "50% 50%",
-            // duration: 50,
-            // loop: true,
-            // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
-
-        })
-
-        // ███████╗███╗   ███╗██╗██╗  ██╗   ██╗
-        // ██╔════╝████╗ ████║██║██║  ╚██╗ ██╔╝
-        // █████╗  ██╔████╔██║██║██║   ╚████╔╝ 
-        // ██╔══╝  ██║╚██╔╝██║██║██║    ╚██╔╝  
-        // ███████╗██║ ╚═╝ ██║██║███████╗██║   
-        // ╚══════╝╚═╝     ╚═╝╚═╝╚══════╝╚═╝   
-
-
-        gsap.registerPlugin(ScrollTrigger)
-        gsap.to('#emily-label', {
-
-            keyframes: {
-                left: mappedCoordinates.emily.x,
-                top: mappedCoordinates.emily.y,
-            },
-            scrollTrigger: {
-                trigger: '#true-emily',
-                start: 'top 50%',
-                markers: true,
-                end: 'bottom 50%',
-                // end: '',
-                scrub: .1,
-                //  onUpdate: ({progress}) => console.log(progress) //  info for position
-            },
-            //transformOrigin: "50% 50%",
-            // duration: 50,
-            // loop: true,
-            // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
-
-        })
-
-
-        // ██████╗ ███████╗███╗   ██╗
-        // ██╔══██╗██╔════╝████╗  ██║
-        // ██████╔╝█████╗  ██╔██╗ ██║
-        // ██╔══██╗██╔══╝  ██║╚██╗██║
-        // ██████╔╝███████╗██║ ╚████║
-        // ╚═════╝ ╚══════╝╚═╝  ╚═══╝
-
-        gsap.registerPlugin(ScrollTrigger)
-        gsap.to('#ben-label', {
-
-            keyframes: {
-                left: mappedCoordinates.ben.x,
-                top: mappedCoordinates.ben.y,
-            },
-            scrollTrigger: {
-                trigger: '#true-ben',
-                start: 'top 50%',
-                markers: true,
-                end: 'bottom 50%',
-                // end: '',
-                scrub: .1,
-                //  onUpdate: ({progress}) => console.log(progress) //  info for position
-            },
-            //transformOrigin: "50% 50%",
-            // duration: 50,
-            // loop: true,
-            // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
-
-        })
-
-
+        animateOnScroll('bianco-label', 'tentacolobianco')
+        animateOnScroll('holly-label', 'true-holly')
+        animateOnScroll('ezra-label', 'true-ezra')
+        animateOnScroll('connie-label', 'true-connie')
+        animateOnScroll('george-label', 'true-george')
+        animateOnScroll('den-label', 'true-den')
+        animateOnScroll('emily-label', 'true-emily')
+        animateOnScroll('ben-label', 'true-ben')
 
     </script>
+
+    <!--        bianco: getKeyframes(mapPath('tentacolobianco')),
+            holly: getKeyframes(mapPath('true-holly')),
+            ezra: getKeyframes(mapPath('true-ezra')),
+            connie: getKeyframes(mapPath('true-connie')),
+            george: getKeyframes(mapPath('true-george')),
+            den: getKeyframes(mapPath('true-den')),
+            emily: getKeyframes(mapPath('true-emily')),
+            ben: getKeyframes(mapPath('true-ben')),
+        }
+-->
 
 
 

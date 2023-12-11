@@ -211,6 +211,18 @@ header {
     position: absolute;
 }
 
+#tentacolobianco svg,
+#true-holly svg,
+#true-ezra svg,
+#true-connie svg,
+#true-george svg,
+#true-den svg,
+#true-emily svg,
+#true-ben svg {
+    opacity: 0;
+}
+
+
 
 #tentacolobianco,
 #true-holly,
