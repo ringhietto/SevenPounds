@@ -15,7 +15,7 @@
 
 </head>
 
-<body style="">
+<body>
 
     <!--
 ████████╗██╗████████╗ ██████╗ ██╗      ██████╗ 
@@ -40,9 +40,37 @@
 
 
 
-    <div class="frecce">
-        <a classc href=""><img src="assets/arrows.svg"></a>
+    <div class="frecce" style="height: 1vw;">
+        <a classc href="#down"><img src="assets/arrows.svg"></a>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
 
     <!--
           █████╗ ██████╗  ██████╗ ██╗   ██╗████████╗    ██╗████████╗
@@ -54,7 +82,7 @@
     -->
 
 
-    <div class="intro">
+    <div id="down" class="intro">
         <h1>
             About it
         </h1>
@@ -70,9 +98,15 @@
             <br>
             This website offers a comprehensive and exhaustive perspective of the temporal evolution of the characters'
             importance within the plot, taking advantage of a line graph arranged distinctly within a jellyfish.
-
-
         </h5>
+    </div>
+
+
+
+    <div class="story">
+        <h1>
+            the Story
+        </h1>
     </div>
 
 
@@ -97,11 +131,14 @@
             align-items: center;
             justify-content: center;
 
-            border-radius: 19px;
+            border-radius: 1vw;
             width: 3.3vw;
             height: 1.5vw;
-            margin-left: -24px;            
-            border: 1px black ;">
+            margin-left: -1.7vw;            
+            border: 1px black ;
+            font-size: 0.95vw;">
+
+
 
             <style>
                 #bianco-label:hover {
@@ -120,10 +157,11 @@
             align-items: center;
             justify-content: center;
             
-            border-radius: 19px;
+            border-radius: 1vw;
             width: 5vw;
             height: 1.5vw;
-            margin-left: -36px;">
+            margin-left: -2.6vw;
+            font-size: 0.95vw;">
             HOLLY
         </span>
 
@@ -134,10 +172,11 @@
         align-items: center;
         justify-content: center;
         
-        border-radius: 19px;
+        border-radius: 1vw;
         width: 4vw;
         height: 1.5vw;
-        margin-left: -29px;">
+        margin-left: -2vw;
+        font-size: 0.95vw;">
             EZRA
         </span>
 
@@ -148,10 +187,11 @@
             align-items: center;
             justify-content: center;
 
-            border-radius: 19px;
+            border-radius: 1vw;
             width: 3.5vw;
             height: 1.5vw;
-            margin-left: -28px;">
+            margin-left: -1.7vw;
+            font-size: 0.95vw;">
             BEN
         </span>
 
@@ -162,10 +202,11 @@
         align-items: center;
         justify-content: center;
 
-        border-radius: 19px; 
+        border-radius: 1vw; 
         width: 4.5vw;
         height: 1.5vw;
-        margin-left: -36px;">
+        margin-left: -2vw;
+        font-size: 0.95vw;">
             EMILY
         </span>
 
@@ -176,10 +217,11 @@
         align-items: center;
         justify-content: center;
 
-        border-radius: 19px;
+        border-radius: 1vw;
         width: 4vw;
         height: 1.5vw;
-        margin-left: -31px;">
+        margin-left: -2vw;
+        font-size: 0.95vw;">
             DEN
         </span>
 
@@ -190,11 +232,11 @@
             align-items: center;
             justify-content: center;
             
-            border-radius: 19px;
+            border-radius: 1vw;
             width: 6vw;
             height: 1.5vw;
-            margin-left: -41px;
-            ">
+            margin-left: -3.3vw;
+            font-size: 0.95vw;">
             GEORGE
         </span>
 
@@ -205,10 +247,11 @@
             align-items: center;
             justify-content: center;
             
-            border-radius: 19px;
+            border-radius: 1vw;
             width: 5.5vw;
             height: 1.5vw;
-            margin-left: -42px;">
+            margin-left: -2.6vw;
+            font-size: 0.95vw;">
             CONNIE
         </span>
 
@@ -600,21 +643,91 @@
 
     </script>
 
-    <!--        bianco: getKeyframes(mapPath('tentacolobianco')),
-            holly: getKeyframes(mapPath('true-holly')),
-            ezra: getKeyframes(mapPath('true-ezra')),
-            connie: getKeyframes(mapPath('true-connie')),
-            george: getKeyframes(mapPath('true-george')),
-            den: getKeyframes(mapPath('true-den')),
-            emily: getKeyframes(mapPath('true-emily')),
-            ben: getKeyframes(mapPath('true-ben')),
-        }
--->
-
-
-
 </body>
 
 
 
 </html>
+
+
+<!--
+
+    const mappedCoordinates = {
+        bianco: mapPath('tentacolobianco'),
+    }
+
+    function mapPath(id) {
+        const el = document.getElementById(id)
+        const totalLength = el.getTotalLength()
+
+        let coordinates = []
+
+
+        for (let index = 0; index < totalLength; index += .1) {
+            const { x, y } = el.getPointAtLength(index);
+
+
+            coordinates.push({ x, y })
+        }
+
+
+
+        coordinates.sort((a, b) => a.y - b.y)
+
+        let maxY = coordinates[coordinates.length - 1].y
+
+
+
+        return {
+            coordinates,
+            maxY
+        }
+
+
+    }
+
+    function getKeyframes(id) {
+        const { coordinates, maxY } = mappedCoordinates[id]
+
+
+        const keyframes = []
+        for (let index = 0; index < 100; index++) {
+            keyframes.push(coordinates.find((c) => c.y > (maxY * index / 2000)))
+        }
+
+        return keyframes
+    }
+    function getXAtProgress(id, progress) {
+        const { coordinates, maxY } = mappedCoordinates[id]
+
+        const y = maxY * progress
+
+        return coordinates.find((c) => c.y > y).x
+    }
+
+    console.log(getKeyframes('bianco'));
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.to('#bianco-label', {
+
+        keyframes: {
+            x: getKeyframes('bianco').map((c) => c.x),
+            y: getKeyframes('bianco').map((c) => c.y),
+        },
+        scrollTrigger: {
+            trigger: '#tentacolobianco',
+            start: 'top 50%',
+            markers: true,
+            end: 'bottom 50%',
+            // end: '',
+            scrub: .1,
+            //  onUpdate: ({progress}) => console.log(progress) //  info for position
+        },
+        //transformOrigin: "50% 50%",
+        // duration: 50,
+        // loop: true,
+        // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
+
+    })
+
+
+-->
