@@ -54,10 +54,6 @@
     src: url("fonts/Helvetica-Bold-Oblique.ttf") format("truetype");
 }
 
-.html {
-    height: 100%;
-}
-
 body {
     padding-top: 20vh;
     /* 280px */
@@ -221,24 +217,39 @@ header {
     display: block;
 }
 
+svg g {
+    display: block;
+}
+
 #medusa-wrapper {
     position: relative;
 }
 
 .badge-personaggio {
+    display: inline-block;
     position: absolute;
+    font-size: 0.95vw;
+    padding: .3em 1em;
+    border-radius: 9999px;
+    transform: translate3d(-50%, 0, 0);
+    opacity: .5;
 }
 
-#tentacolobianco svg,
-#true-holly svg,
-#true-ezra svg,
-#true-connie svg,
-#true-george svg,
-#true-den svg,
-#true-emily svg,
-#true-ben svg {
+.badge-personaggio.active {
+    opacity: 1;
+}
+
+#tentacolobianco,
+#true-holly,
+#true-ezra,
+#true-connie,
+#true-george,
+#true-den,
+#true-emily,
+#true-ben {
     opacity: 0;
 }
+
 
 
 
