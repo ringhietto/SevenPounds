@@ -232,7 +232,7 @@ svg g {
     padding: .3em 1em;
     border-radius: 9999px;
     transform: translate3d(-50%, 0, 0);
-    opacity: .5;
+    opacity: .1;
 }
 
 .badge-personaggio.active {
