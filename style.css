@@ -233,7 +233,11 @@ svg g {
     border-radius: 9999px;
     transform: translate3d(-50%, 0, 0);
     opacity: .1;
-    z-index: -1;
+
+}
+
+#medusa-wrapper {
+    z-index: 2;
 }
 
 .badge-personaggio.active {
@@ -249,11 +253,65 @@ svg g {
 #true-emily,
 #true-ben {
     opacity: 0;
-    z-index: -2;
 }
 
-#Present {
-    z-index: 100;
+#EZRA,
+#TIM,
+#HOLLY,
+#GEORGE,
+#CONNIE,
+#DEN,
+#EMILY,
+#BEN {
+    position: absolute;
+    z-index: 1;
+}
+
+#Time01,
+#Time02,
+#Time03,
+#Time04,
+#Time05,
+#Time06,
+#Time07,
+#Time08,
+#Time09,
+#Time10,
+#Time11,
+#Time12,
+#Time13,
+#Time14,
+#Time15,
+#Time16,
+#Time17,
+#Time18,
+#Time19,
+#Time20,
+#Time21,
+#Time22,
+#Time23,
+#Time24,
+#Time25,
+#Time26,
+#Time27,
+#Time28,
+#Time29,
+#Time30,
+#Time31,
+#Time32,
+#Time33,
+#Time34,
+#Time35 {
+    opacity: 0
+}
+
+/* #Time03.active {
+    opacity: 1;
+} */
+
+#PopUp {
+    position: absolute;
+    z-index: 3;
 }
 
 /* #Time03 {
