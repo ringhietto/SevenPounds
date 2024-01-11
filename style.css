@@ -206,10 +206,10 @@ header {
 
 
 
-
+/* 
 .tentacles {
     z-index: 100;
-}
+} */
 
 #medusa-wrapper svg {
     max-width: 100%;
@@ -233,6 +233,7 @@ svg g {
     border-radius: 9999px;
     transform: translate3d(-50%, 0, 0);
     opacity: .1;
+    z-index: -1;
 }
 
 .badge-personaggio.active {
@@ -248,9 +249,20 @@ svg g {
 #true-emily,
 #true-ben {
     opacity: 0;
+    z-index: -2;
 }
 
+#Present {
+    z-index: 100;
+}
 
+/* #Time03 {
+    opacity: 0;
+} */
+
+/* #Time03.active {
+    opacity: 1;
+} */
 
 
 #tentacolobianco,
