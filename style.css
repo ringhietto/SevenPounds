@@ -405,16 +405,6 @@ svg g {
     opacity: 1;
 }
 
-#tentacolobianco,
-#true-holly,
-#true-ezra,
-#true-connie,
-#true-george,
-#true-den,
-#true-emily,
-#true-ben {
-    opacity: 0;
-}
 
 #EZRA,
 #TIM,
@@ -428,55 +418,66 @@ svg g {
     z-index: 1;
 }
 
-#Time01,
-#Time02,
-#Time03,
-#Time04,
-#Time05,
-#Time06,
-#Time07,
-#Time08,
-#Time09,
-#Time10,
-#Time11,
-#Time12,
-#Time13,
-#Time14,
-#Time15,
-#Time16,
-#Time17,
-#Time18,
-#Time19,
-#Time20,
-#Time21,
-#Time22,
-#Time23,
-#Time24,
-#Time25,
-#Time26,
-#Time27,
-#Time28,
-#Time29,
-#Time30,
-#Time31,
-#Time32,
-#Time33,
-#Time34,
-#Time35,
+#tentacolobianco,
+#true-holly,
+#true-ezra,
+#true-connie,
+#true-george,
+#true-den,
+#true-emily,
+#true-ben,
+#time01,
+#time02,
+#time03,
+#time04,
+#time05,
+#time06,
+#time07,
+#time08,
+#time09,
+#time10,
+#time11,
+#time12,
+#time13,
+#time14,
+#time15,
+#time16,
+#time17,
+#time18,
+#time19,
+#time20,
+#time21,
+#time22,
+#time23,
+#time24,
+#time25,
+#time26,
+#time27,
+#time28,
+#time29,
+#time30,
+#time31,
+#time32,
+#time33,
+#time34,
+#time35,
 #popup1,
 #popup2,
-#popup3 {
+#popup3,
+#popup4,
+#popup5,
+#popup6 {
     opacity: 0
 }
 
 /* #Time03.active {
     opacity: 1;
 } */
-
+/* 
 #PopUp {
     position: absolute;
     z-index: 3;
-}
+} */
 
 /* #Time03 {
     opacity: 0;
