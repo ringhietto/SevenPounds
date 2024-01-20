@@ -150,7 +150,9 @@ header {
 
 body {
     /* background: linear-gradient(-45deg, #0054A1, #030C2F, #091552, #1B4583, #232F6B); */
-    background: linear-gradient(-45deg, #5b66fd, #2a4369, #1B4583, #364DC8);
+    background: linear-gradient(217deg, #0054A1, #030C2F, #091552, #030C2F);
+    background: linear-gradient(127deg, #030C2F, #213075, #232F6B, #29388f);
+    background: linear-gradient(336deg, #374798, #224570, #3F55C5, #030C2F);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     height: 100vh;
@@ -491,9 +493,24 @@ svg g {
 #popup3,
 #popup4,
 #popup5,
-#popup6 {
+#popup6
+
+/* #medusa,
+#medusa-wrapper, */
+    {
     opacity: 0
 }
+
+/* #HOLLY,
+#GEORGE,
+#CONNIE,
+#EZRA,
+#DEN,
+#BEN,
+#EMILY,
+#TIM {
+    display: none;
+} */
 
 /* #Time03.active {
     opacity: 1;
