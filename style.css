@@ -55,7 +55,7 @@
 }
 
 body {
-    padding-top: 20vh;
+
     /* 280px */
     font-family: Philosopher;
     margin: 0;
@@ -84,7 +84,7 @@ header {
 }
 
 .title {
-
+    padding-top: 20vh;
     color: #CCF3FF;
     text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
     font-size: 23vh;
@@ -114,6 +114,9 @@ header {
     padding-bottom: 23vw;
     padding-top: 5vw;
     position: relative;
+    fill: none;
+    /* stroke: #CCF3FF; */
+
     animation-name: moving;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -133,6 +136,17 @@ header {
     transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
 
 }
+
+
+
+#arrows {
+    stroke: #CCF3FF;
+}
+
+#arrows:hover {
+    stroke: red;
+}
+
 
 @keyframes moving {
     0% {
@@ -159,13 +173,17 @@ header {
 }
 
 
-body {
+#background {
     background: linear-gradient(135deg, #34417f, #010618, #010618, #34417f, #010618, #010618, #34417f, #010618);
     background-size: 1600% 1600%;
 
     -webkit-animation: AnimationName 8s ease infinite;
     -moz-animation: AnimationName 8s ease infinite;
     animation: AnimationName 8s ease infinite;
+
+    position: relative;
+    z-index: 2;
+    padding-bottom: 100vh;
 }
 
 @-webkit-keyframes AnimationName {
@@ -756,3 +774,109 @@ p {
 ██║     ██║  ██║███████╗╚██████╗╚██████╗███████╗
 ╚═╝     ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝╚══════╝
 */
+
+
+
+
+footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 0;
+    height: 5vh;
+    padding-top: 100vw;
+}
+
+
+
+
+
+
+.blok:nth-of-type(odd) {
+    background-color: white;
+}
+
+.blok:nth-of-type(even) {
+    background-color: black;
+}
+
+.paginacontainer {
+    height: 3000px;
+}
+
+/* #Progress
+    ================================================== */
+
+.progress-wrap {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+}
+
+.progress-wrap.active-progress {
+    opacity: 1;
+    visibility: visible;
+}
+
+.progress-wrap::after {
+    position: absolute;
+    content: '\e84b';
+    text-align: center;
+    line-height: 46px;
+    color: rgba(0, 0, 0, 0.3);
+    /* --- Pijl kleur --- */
+    left: 0;
+    top: 0;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    display: block;
+    z-index: 1;
+}
+
+.progress-wrap:hover::after {
+    opacity: 0;
+}
+
+.progress-wrap::before {
+    position: absolute;
+    font-family: 'unicons';
+    content: '\e84b';
+    text-align: center;
+    line-height: 46px;
+    font-size: 24px;
+    opacity: 0;
+    background: black;
+    /* --- Pijl hover kleur --- */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    left: 0;
+    top: 0;
+    height: 46px;
+    width: 46px;
+    display: block;
+    z-index: 2;
+}
+
+.progress-wrap:hover::before {
+    opacity: 1;
+}
+
+.progress-wrap svg path {
+    fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+    stroke: rgba(0, 0, 0, 0.2);
+    stroke-width: 4;
+    box-sizing: border-box;
+}
