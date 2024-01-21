@@ -72,6 +72,16 @@
         <div id="down" style="opacity:0; padding-bottom: 15vw;">
         </div>
 
+        <script>
+            const down = document.querySelector('#down');
+            down.onmousemove = function (e) {
+                const x = e.page - down.offsetLeft;
+                const y = e.pageY - down.offsetTop;
+                down.style.setProperty('--x', x + 'px');
+                down.style.setProperty('--y', y + 'px');
+            }
+        </script>
+
         <div class="intro">
             <h1 id="aboutit">
                 About it
@@ -877,8 +887,6 @@
                     </clipPath>
                 </defs>
             </svg>
-
-
 
 
         </div>

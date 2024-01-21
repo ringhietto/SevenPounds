@@ -880,3 +880,45 @@ footer {
     stroke-width: 4;
     box-sizing: border-box;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.down {
+    position: relative;
+    display: inline-flex;
+    padding: 10px 30px;
+    background: #363636;
+    color: #fff;
+    text-decoration: none;
+    Letter-spacing: 1px;
+    overflow: hidden;
+}
+
+.down::before {
+    content: '';
+    position: absolute;
+    top: var(--y);
+    Left: var(--x);
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #2196f3;
+    transition: width 0.5s, height 0.5s, ;
+}
+
+.down:hover::before {
+    width: 300px;
+    height: 300px;
+}
