@@ -149,7 +149,14 @@ header {
 }
 
 
+.endpage {
+    background: linear-gradient(135deg, #34417f, #010618, #010618, #34417f, #010618, #010618, #34417f, #010618);
+    background-size: 100% 100%;
 
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+}
 
 
 body {
@@ -204,7 +211,13 @@ body {
 }
 
 
-
+.endpage {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5vh;
+}
 
 
 
@@ -359,9 +372,11 @@ body {
     display: block;
 }
 
-svg g {
+svg g,
+svg text {
     display: block;
 }
+
 
 #medusa-wrapper {
     position: relative;

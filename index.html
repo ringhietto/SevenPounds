@@ -179,6 +179,8 @@
 ╚═╝     ╚═╝╚══════╝╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝
 -->
 
+        <div class="endpage">
+        </div>
 
         <svg viewBox="0 0 1863 9815" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="medusa">
@@ -858,8 +860,6 @@
 
 
 
-
-
     </div>
 
 
@@ -888,8 +888,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
-
 
 
     <script>
@@ -926,7 +924,12 @@
         }
 
 
+        let keyframes = {};
+
+
         function getKeyframes(coords) {
+            // 
+            console.warn('Calcolo le coordinate, non dovrebbero essere nel json?')
             const { coordinates, maxY, minY } = coords
 
             const keyframes = { x: [], y: [] }
@@ -946,7 +949,12 @@
 
 
         function animateOnScroll(badgeId, pathId) {
-            const coordinates = getKeyframes(mapPath(pathId))
+            const coordinates = pathId in keyframes ? keyframes[pathId] : getKeyframes(mapPath(pathId))
+
+            // OPERATORE TERNARIO: SE KEYFRAMES HA PATHID --> SI PRENDE KEYFRAMES PATHID, ALTRIMENTI SI PRENDE LE KEYFRAMES DI GETKEYFRAMES
+
+            // salvo le cordinate in keyframes
+            keyframes[pathId] = coordinates
 
             gsap.to('#' + badgeId, {
                 keyframes: {
@@ -958,35 +966,48 @@
                     start: 'top 50%',
                     end: 'bottom 50%',
                     // markers: true,
-                    // end: '',
                     scrub: .1,
-                    //  onUpdate: ({progress}) => console.log(progress) //  info for position
+
                 },
-                // transformOrigin: "-50% -70%",
-                // duration: 50,
-                // loop: true,
-                // motionPath: { path: "#tentacolobianco", align: "#tentacolobianco" },
+
 
             })
         }
 
-        animateOnScroll('bianco-label', 'tentacolobianco')
-        animateOnScroll('holly-label', 'true-holly')
-        animateOnScroll('ezra-label', 'true-ezra')
-        animateOnScroll('connie-label', 'true-connie')
-        animateOnScroll('george-label', 'true-george')
-        animateOnScroll('den-label', 'true-den')
-        animateOnScroll('emily-label', 'true-emily')
-        animateOnScroll('ben-label', 'true-ben')
+        // PRENDE IL FILE KEYFRAME.JSON in cui c'è l'array, poi viene fatta una promessa, che quando viene risolta, viene fatto il console.log di data, che è il json
+
+        //  lui fa il fetch; elabora il risultato; poi fa la funzione dopo su animateonscroll --> quando sono disponibili tutti i dati si richiama animateonscroll
+        // console.time inizia il timer, console.timeEnd lo ferma
+
+        console.time('fetch')
+        fetch('/keyframes.json')
+            .then((response) => response.json())
+            .then((data) => {
+                // il contenuto del json viene assegnato a keyframes
+
+                keyframes = data
+
+                animateOnScroll('bianco-label', 'tentacolobianco')
+                animateOnScroll('holly-label', 'true-holly')
+                animateOnScroll('ezra-label', 'true-ezra')
+                animateOnScroll('connie-label', 'true-connie')
+                animateOnScroll('george-label', 'true-george')
+                animateOnScroll('den-label', 'true-den')
+                animateOnScroll('emily-label', 'true-emily')
+                animateOnScroll('ben-label', 'true-ben')
+
+                console.timeEnd('fetch')
+
+
+                // console.log(JSON.stringify(keyframes))
+
+            })
 
 
 
-
-        // CENTRO
 
         function schiarisciBadge(groupId, label) {
 
-            // EZRA
 
             ScrollTrigger
                 .create({
@@ -996,8 +1017,6 @@
                     // markers: true,
                     scrub: .1,
                     onToggle: () => {
-                        console
-                            .log('toggle');
                         document
                             .getElementById(label)
                             .classList
@@ -1022,7 +1041,6 @@
         schiarisciBadge('#Emily6', 'emily-label')
 
 
-        // FINALI
 
         function schiarisciBadgeFinale(groupId, label) {
 
@@ -1070,62 +1088,13 @@
                 opacity: 1,
             }
             )
-            // EZRA
 
-            //     ScrollTrigger
-            //         .create({
-            //             trigger: '#Time03',
-            //             start: 'bottom 40%',
-            //             end: 'top 60%',
-            //             markers: true,
-            //             scrub: .1,
-            //             onToggle: () => {
-            //                 console
-            //                     .log('toggle');
-            //                 document
-            //                     .getElementById('#Time03')
-            //                     .classList
-            //                     .toggle('active')
-            //             },
-
-            //         })
         }
-        timeline('#time01')
-        timeline('#time02')
-        timeline('#time03')
-        timeline('#time04')
-        timeline('#time05')
-        timeline('#time06')
-        timeline('#time07')
-        timeline('#time08')
-        timeline('#time09')
-        timeline('#time10')
-        timeline('#time11')
-        timeline('#time12')
-        timeline('#time13')
-        timeline('#time14')
-        timeline('#time15')
-        timeline('#time16')
-        timeline('#time17')
-        timeline('#time18')
-        timeline('#time19')
-        timeline('#time20')
-        timeline('#time21')
-        timeline('#time22')
-        timeline('#time23')
-        timeline('#time24')
-        timeline('#time25')
-        timeline('#time26')
-        timeline('#time27')
-        timeline('#time28')
-        timeline('#time29')
-        timeline('#time30')
-        timeline('#time31')
-        timeline('#time32')
-        timeline('#time33')
-        timeline('#time34')
-        timeline('#time35')
 
+        for (let i = 1; i <= 35; i++) {
+            let paddedNumber = String(i).padStart(2, '0');
+            timeline('#time' + paddedNumber);
+        }
 
 
 
@@ -1158,6 +1127,7 @@
         popup('#aboutit')
         popup('#plot')
         popup('#story')
+
         // popup('#medusa')
         // popup('#medusa-wrapper')
 
@@ -1190,65 +1160,11 @@
         tentacoli('#EMILY')
         tentacoli('#TIM')
 
-        // function medusa(medusaId) {
-
-        //     gsap.to(medusaId, {
-
-        //         scrollTrigger: {
-        //             trigger: medusaId,
-        //             start: 'top 10%',
-        //             end: 'bottom 90%',
-        //             // end: 'bottom 0%',
-        //             innerHeight: 100,
-
-
-        //             markers: true,
-        //             toggleActions: "play reverse play reverse"
-        //         },
-        //         opacity: 100,
-        //     }
-        //     )
-
-        // }
-        // medusa('#medusa')
-
-
-        // ScrollSmoother.create({
-        //     smooth: 3,
-        //     effects: true,
-        //     smoothTouch: 0.1,
-        //     normalizeScroll: true
-        // });
-
-        // ScrollTrigger.create({
-        //     trigger: ".footer",
-        //     pin: true,
-        //     start: "bottom bottom",
-        //     end: "+=100%"
-        // });
 
 
 
 
-        // function cursor(cursorId) {
 
-        //     gsap.to(cursorId, {
-
-        //         scrollTrigger: {
-        //             trigger: cursorId,
-        //             start: 'top 70%',
-        //             // 50% dal bottom
-        //             end: 'top 0%',
-        //             // 0% dal bottom
-
-        //             markers: true,
-        //             toggleActions: "play reverse play reverse"
-        //         },
-        //         opacity: 1,
-        //     }
-        //     )
-        // }
-        // cursor('#Ben1')
 
 
         // function cursor(cursorId) {
@@ -1277,154 +1193,11 @@
 
 
 
-
-
-        // gsap.registerPlugin(ScrollTrigger);
-
-        // // Definisci l'SVG del cursore
-        // let cursorSVG = "url('assets/medusinared'), auto";
-
-        // // Seleziona l'elemento che triggera il cambio del cursore
-        // let triggerElement = document.getElementById("#Ben1");
-
-        // // Crea l'animazione con ScrollTrigger
-        // gsap.to("#Ben1", {
-        //     scrollTrigger: {
-        //         trigger: triggerElement,
-        //         start: 'top center', // Modifica secondo le tue necessità
-        //         onEnter: () => document.body.style.cursor = cursorSVG, // Cambia il cursore quando l'elemento entra nel viewport
-        //         onLeaveBack: () => document.body.style.cursor = 'default', // Ripristina il cursore quando l'elemento esce dal
-        //         viewport
-        //     }
-        // });
-
-
-
-
-
-
-
-
-
-
         // toggleActions: 'play none none reverse',
         // onEnter onLeave onEnterBack onLeaveBack
 
 
 
-
-        // FINALI
-
-        // gsap.from('#holly-label', {
-        // opacity: .5,
-        // scrollTrigger: {
-        // trigger: '#Holly1',
-        // start: 'top 50%',
-        // end: '+=30',
-        // scrub: .1,
-        // marker: true
-
-        // }
-
-        // })
-
-        // EZRA
-
-        // ScrollTrigger.create({
-        // trigger: '#Ezra2',
-        // start: 'top 50%',
-        // end: 'bottom 50%',
-        // scrub: .1,
-        // onToggle: () => {
-        // console.log('toggle');
-        // document.getElementById('ezra-label')
-        // .classList.toggle('active')
-        // },
-        // markers: true
-        // })
-
-        // ScrollTrigger.create({
-        // trigger: '#Ezra3',
-        // start: 'top 50%',
-        // end: 'bottom 50%',
-        // scrub: .1,
-        // onToggle: () => {
-        // console.log('toggle');
-        // document.getElementById('ezra-label')
-        // .classList.toggle('active')
-        // },
-        // markers: true
-        // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // function startLoader() {
-        // let counterElement = document.querySelector(".counter");
-        // let currentValue = 0;
-
-        // function updateCounter() {
-        // if (currentValue === 100) {
-        // return;
-        // }
-
-        // currentValue += Math.floor(Math.random() * 10) + 1;
-
-        // if (currentValue > 100) {
-        // currentValue = 100;
-        // }
-
-        // counterElement.textContent = currentValue;
-
-        // let delay = Math.floor(Math.random() * 200) + 50;
-        // setTimeout(updateCounter, delay);
-        // }
-
-        // updateCounter();
-
-        // }
-
-        // startLoader();
-
-        // gsap.to(".counter", 0.25, {
-        // delay: 3.5,
-        // opacity: 0,
-        // });
-
-        // gsap.to(".bar", 1.5, {
-        // delay: 3.5,
-        // height: 0,
-        // stagger: {
-        // amount: 0.5,
-        // },
-        // ease: "power4.inOut"
-        // })
-
-        // gsap.from(".h1", 1.5, {
-        // delay: 4,
-        // y: 700,
-        // stagger: {
-        // amount: 0.5,
-        // },
-        // ease: "power4.inOut"
-
-        // })
-
-        // gsap.from(".hero", 2, {
-        // delay: 4.5,
-        // y: 400,
-        // ease: "power4.inOut"
-        // })
 
 
 
