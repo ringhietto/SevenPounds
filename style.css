@@ -391,6 +391,18 @@ svg text {
     transform: translate3d(-50%, 0, 0);
     opacity: .1;
 
+    pointer-events: none;
+
+}
+
+#popup1,
+#popup2,
+#popup3,
+#popup4,
+#popup5,
+#popup6 {
+    position: relative;
+    z-index: 10;
 }
 
 #medusa-wrapper {
