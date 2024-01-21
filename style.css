@@ -148,29 +148,66 @@ header {
     }
 }
 
+
+
+
+
 body {
-    /* background: linear-gradient(-45deg, #0054A1, #030C2F, #091552, #1B4583, #232F6B); */
-    background: linear-gradient(217deg, #0054A1, #030C2F, #091552, #030C2F);
-    background: linear-gradient(127deg, #030C2F, #213075, #232F6B, #29388f);
-    background: linear-gradient(336deg, #374798, #224570, #3F55C5, #030C2F);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    height: 100vh;
+    background: linear-gradient(135deg, #34417f, #010618, #010618, #34417f, #010618, #010618, #34417f, #010618);
+    background-size: 1600% 1600%;
+
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
 }
 
-@keyframes gradient {
+@-webkit-keyframes AnimationName {
     0% {
-        background-position: 0% 50%;
+        background-position: 0% 50%
     }
 
     50% {
-        background-position: 100% 50%;
+        background-position: 100% 50%
     }
 
     100% {
-        background-position: 0% 50%;
+        background-position: 0% 50%
     }
 }
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -210,70 +247,6 @@ body {
     cursor: url(/assets/medusina.svg), auto;
 }
 
-#Emo10 {
-    cursor: url(/assets/medusinared.svg), auto;
-}
-
-#Emo11 {
-    cursor: url(/assets/medusina.svg), auto;
-}
-
-#Emo12 {
-    cursor: url(/assets/medusinared.svg), auto;
-}
-
-#Emo13 {
-    cursor: url(/assets/medusina.svg), auto;
-}
-
-#Emo14 {
-    cursor: url(/assets/medusinared.svg), auto;
-}
-
-#Emo15 {
-    cursor: url(/assets/medusina.svg), auto;
-}
-
-#Emo16 {
-    cursor: url(/assets/medusinared.svg), auto;
-}
-
-#Emo17 {
-    cursor: url(/assets/medusina.svg), auto;
-}
-
-#Emo18 {
-    cursor: url(/assets/medusinared.svg), auto;
-}
-
-#Emo19 {
-    cursor: url(/assets/medusina.svg), auto;
-}
-
-#Emo20 {
-    cursor: url(/assets/medusinared.svg), auto;
-}
-
-#Emo21 {
-    cursor: url(/assets/medusina.svg), auto;
-}
-
-#Emo22 {
-    cursor: url(/assets/medusinared.svg), auto;
-}
-
-#Emo23 {
-    cursor: url(/assets/medusina.svg), auto;
-}
-
-#Emo24 {
-    cursor: url(/assets/medusinared.svg), auto;
-}
-
-#Emo25 {
-    cursor: url(/assets/medusina.svg), auto;
-}
-
 #Emo01,
 #Emo02,
 #Emo03,
@@ -282,23 +255,7 @@ body {
 #Emo06,
 #Emo07,
 #Emo08,
-#Emo09,
-#Emo10,
-#Emo11,
-#Emo12,
-#Emo13,
-#Emo14,
-#Emo15,
-#Emo16,
-#Emo17,
-#Emo18,
-#Emo19,
-#Emo20,
-#Emo21,
-#Emo22,
-#Emo23,
-#Emo24,
-#Emo25 {
+#Emo09 {
     text-decoration: none;
     opacity: 0;
 }
