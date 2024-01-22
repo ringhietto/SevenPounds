@@ -930,45 +930,45 @@ footer {
  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 */
 
-/* 
+
 .cursorwhite {
-    cursor: url(/assets/cursor/cursorwhite.png), pointer;
+    cursor: url(SevenPounds/assets/cursor/cursorwhite.svg), pointer;
 }
 
 #background {
-    cursor: url(/assets/cursor/cursorwhite.png), pointer;
+    cursor: url(SevenPounds/assets/cursor/cursorwhite.svg), pointer;
 }
 
 
 #tristezza {
-    cursor: url(/assets/cursor/tristezzaword.png), pointer;
+    cursor: url(SevenPounds/assets/cursor/tristezzaword.svg), pointer;
 }
 
 #gioia {
-    cursor: url(/assets/cursor/gioiaword.png), pointer;
+    cursor: url(SevenPounds/assets/cursor/gioiaword.svg), pointer;
 }
 
 #serenita {
-    cursor: url(/assets/cursor/serenitaword.png), pointer;
+    cursor: url(SevenPounds/assets/cursor/serenitaword.svg), pointer;
 }
 
 #amore {
-    cursor: url(/assets/cursor/amoreword.png), pointer;
+    cursor: url(SevenPounds/assets/cursor/amoreword.svg), pointer;
 }
 
 #morte {
-    cursor: url(/assets/cursor/morteword.png), pointer;
+    cursor: url(SevenPounds/assets/cursor/morteword.svg), pointer;
 }
 
 #neutro {
-    cursor: url(/assets/cursor/cursorwhite.png), pointer;
+    cursor: url(SevenPounds/assets/cursor/cursorwhite.svg), pointer;
 
 }
 
 #restart {
-    cursor: url(/assets/cursor/medusinamini.png), pointer;
+    cursor: url(SevenPounds/assets/cursor/medusinamini.svg), pointer;
 }
 
 #emotions {
-    cursor: url(/assets/cursor/cursorwhitemini.png), pointer;
-} */
+    cursor: url(SevenPounds/assets/cursor/cursorwhitemini.svg), pointer;
+}
