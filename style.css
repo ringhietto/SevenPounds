@@ -120,7 +120,7 @@ header {
     /* stroke: #CCF3FF; */
 
     animation-name: moving;
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
     transition-timing-function: linear;
     transition-timing-function: cubic-bezier(0, 0, 1, 1);
@@ -140,20 +140,6 @@ header {
 }
 
 
-
-#arrows {
-    stroke: #CCF3FF;
-    transition: 50ms;
-}
-
-#arrows:hover {
-    stroke: #b3b3b3;
-    /* stroke: red; */
-    transition-duration: 50ms;
-    transition-delay: 20ms;
-}
-
-
 @keyframes moving {
     0% {
         top: 0px;
@@ -169,14 +155,19 @@ header {
 }
 
 
-.endpage {
-    background: linear-gradient(135deg, #34417f, #010618, #010618, #34417f, #010618, #010618, #34417f, #010618);
-    background-size: 100% 100%;
-
-    -webkit-animation: AnimationName 8s ease infinite;
-    -moz-animation: AnimationName 8s ease infinite;
-    animation: AnimationName 8s ease infinite;
+#arrows {
+    stroke: #CCF3FF;
+    transition: 50ms;
 }
+
+#arrows:hover {
+    stroke: #729ba8;
+    /* stroke: red; */
+    transition-duration: 50ms;
+    transition-delay: 20ms;
+}
+
+
 
 
 #background {
@@ -186,6 +177,7 @@ header {
     -webkit-animation: AnimationName 8s ease infinite;
     -moz-animation: AnimationName 8s ease infinite;
     animation: AnimationName 8s ease infinite;
+
 
     position: relative;
     z-index: 2;
@@ -235,62 +227,9 @@ header {
 }
 
 
-.endpage {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 5vh;
-}
 
 
 
-
-
-
-#Emo01,
-#Emo02,
-#Emo03,
-#Emo04,
-#Emo05,
-#Emo06,
-#Emo07,
-#Emo08,
-#Emo09 {
-    text-decoration: none;
-    opacity: 0;
-}
-
-
-
-/* 
-.overlay {
-    position: fixed;
-    width: 100vw;
-    height: 100vw;
-    z-index: 2;
-    display: flex;
-}
-
-.bar {
-    width: 10vw;
-    height: 105vh;
-    background: #1a1a1a;
-}
-
-.counter {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    z-index: 10000;
-    color: white;
-    z-index: 100000;
-    font-size: 3vw;
-    font-family: Philosopher;
-} */
 
 /*
 ██╗███╗   ██╗████████╗██████╗  ██████╗ 
@@ -306,11 +245,11 @@ header {
     justify-content: center;
 }
 
-.intro h1 {
+.intro div {
     color: #CCF3FF;
     text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
     font-family: Philosopher;
     justify-content: center;
@@ -319,15 +258,15 @@ header {
 }
 
 .intro h5 {
-    text-align: left;
+    text-align: center;
     width: 838px;
     display: inline-block;
     color: #CCF3FF;
     font-family: Helvetica;
     font-weight: 300;
-
+    line-height: 1.8vw;
     font-size: 1vw;
-    padding-bottom: 18vw;
+    padding-bottom: 30vw;
 }
 
 
@@ -347,7 +286,44 @@ header {
     font-size: 4vw;
 }
 
+.legenda {
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
 
+    color: #CCF3FF;
+    text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
+    font-style: normal;
+    font-weight: 100;
+    text-align: center;
+    font-family: Philosopher;
+    justify-content: center;
+    font-size: 1vw;
+
+}
+
+
+#emotions {
+    padding: 0 30px;
+}
+
+#names {
+    padding: 5px 0;
+}
+
+#explanation {
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    color: #CCF3FF;
+    font-family: Helvetica;
+    font-weight: 300;
+    line-height: 1.8vw;
+    font-size: 1.5vw;
+
+    padding-bottom: 1vw;
+}
 
 
 #medusa-wrapper svg {
@@ -389,6 +365,7 @@ svg text {
 #popup6 {
     position: relative;
     z-index: 10;
+    pointer-events: none;
 }
 
 #medusa-wrapper {
@@ -425,6 +402,7 @@ svg text {
 #aboutit,
 #plot,
 #story,
+.legenda,
 #time01,
 #time02,
 #time03,
@@ -466,6 +444,12 @@ svg text {
 #popup4,
 #popup5,
 #popup6,
+#neutro,
+#serenita,
+#gioia,
+#amore,
+#tristezza,
+#morte,
 .creators,
 #restart {
     opacity: 0
@@ -503,7 +487,7 @@ svg {
     justify-content: center;
 }
 
-p {
+.creators p {
     color: #CCF3FF;
     padding: 0px 16px;
     text-align: center;
@@ -705,6 +689,7 @@ p {
     opacity: 0;
     filter: blur(4px);
     animation: scale 1000s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    cursor: none;
 }
 
 #arrows:nth-child(1) {
@@ -851,34 +836,6 @@ body {
     padding-bottom: 5vw;
 }
 
-/* #down {
-    position: relative;
-    display: inline-flex;
-    padding: 10px 30px;
-    background: #363636;
-    color: #fff;
-    text-decoration: none;
-    Letter-spacing: 1px;
-    overflow: hidden;
-}
-
-#down::before {
-    content: '';
-    position: absolute;
-    top: var(--y);
-    Left: var(--x);
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: #2196f3;
-    transition: width 0.5s, height 0.5s, ;
-}
-
-#down:hover::before {
-    width: 300px;
-    height: 300px;
-} */
 
 
 /* 
@@ -900,43 +857,35 @@ body {
 }
 
 
-#Emo01 {
-    cursor: url(/assets/cursor/cursorred.svg), auto;
+#tristezza {
+    cursor: url(/assets/cursor/tristezzaword.svg), auto;
 }
 
-#Emo02 {
-    cursor: url(/assets/cursor/cursorblue.svg), auto;
+#gioia {
+    cursor: url(/assets/cursor/gioiaword.svg), auto;
 }
 
-#Emo03 {
-    cursor: url(/assets/cursor/medusina.svg), auto;
+#serenita {
+    cursor: url(/assets/cursor/serenitaword.svg), auto;
 }
 
-#Emo04 {
-    cursor: url(/assets/cursor/medusinared.svg), auto;
+#amore {
+    cursor: url(/assets/cursor/amoreword.svg), auto;
 }
 
-#Emo05 {
-    cursor: url(/assets/cursor/medusina.svg), auto;
+#morte {
+    cursor: url(/assets/cursor/morteword.svg), auto;
 }
 
-#Emo06 {
-    cursor: url(/assets/cursor/medusinared.svg), auto;
-}
+#neutro {
+    cursor: url(/assets/cursor/cursorwhite.svg), auto;
 
-#Emo07 {
-    cursor: url(/assets/cursor/medusina.svg), auto;
 }
-
-#Emo08 {
-    cursor: url(/assets/cursor/medusinared.svg), auto;
-}
-
-#Emo09 {
-    cursor: url(/assets/cursor/medusina.svg), auto;
-}
-
 
 #restart {
     cursor: url(/assets/cursor/medusinamini.svg), auto;
+}
+
+.legenda {
+    cursor: url(/assets/cursor/cursorwhitemini.svg), auto;
 }
