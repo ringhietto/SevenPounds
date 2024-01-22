@@ -79,6 +79,8 @@ body {
    ╚═╝   ╚═╝   ╚═╝    ╚═════╝ ╚══════╝╚═╝
 */
 
+
+
 header {
     margin-left: 30px;
 }
@@ -111,7 +113,7 @@ header {
 .frecce {
     display: flex;
     justify-content: center;
-    padding-bottom: 23vw;
+    padding-bottom: 12vw;
     padding-top: 5vw;
     position: relative;
     fill: none;
@@ -141,10 +143,14 @@ header {
 
 #arrows {
     stroke: #CCF3FF;
+    transition: 50ms;
 }
 
 #arrows:hover {
-    stroke: red;
+    stroke: #b3b3b3;
+    /* stroke: red; */
+    transition-duration: 50ms;
+    transition-delay: 20ms;
 }
 
 
@@ -183,7 +189,7 @@ header {
 
     position: relative;
     z-index: 2;
-    padding-bottom: 100vh;
+    padding-bottom: 1vh;
 }
 
 @-webkit-keyframes AnimationName {
@@ -241,42 +247,6 @@ header {
 
 
 
-
-#Emo01 {
-    cursor: url(/assets/cursorred.svg), auto;
-}
-
-#Emo02 {
-    cursor: url(/assets/cursorblue.svg), auto;
-}
-
-#Emo03 {
-    cursor: url(/assets/medusina.svg), auto;
-}
-
-#Emo04 {
-    cursor: url(/assets/medusinared.svg), auto;
-}
-
-#Emo05 {
-    cursor: url(/assets/medusina.svg), auto;
-}
-
-#Emo06 {
-    cursor: url(/assets/medusinared.svg), auto;
-}
-
-#Emo07 {
-    cursor: url(/assets/medusina.svg), auto;
-}
-
-#Emo08 {
-    cursor: url(/assets/medusinared.svg), auto;
-}
-
-#Emo09 {
-    cursor: url(/assets/medusina.svg), auto;
-}
 
 #Emo01,
 #Emo02,
@@ -379,10 +349,6 @@ header {
 
 
 
-/* 
-.tentacles {
-    z-index: 100;
-} */
 
 #medusa-wrapper svg {
     max-width: 100%;
@@ -412,6 +378,8 @@ svg text {
     pointer-events: none;
 
 }
+
+
 
 #popup1,
 #popup2,
@@ -443,6 +411,8 @@ svg text {
     position: absolute;
     z-index: 1;
 }
+
+/* OPACITY: 0 */
 
 #tentacolobianco,
 #true-holly,
@@ -495,47 +465,10 @@ svg text {
 #popup3,
 #popup4,
 #popup5,
-#popup6
-
-/* #medusa,
-#medusa-wrapper, */
-    {
+#popup6,
+.creators,
+#restart {
     opacity: 0
-}
-
-/* #HOLLY,
-#GEORGE,
-#CONNIE,
-#EZRA,
-#DEN,
-#BEN,
-#EMILY,
-#TIM {
-    display: none;
-} */
-
-/* #Time03.active {
-    opacity: 1;
-} */
-/* 
-#PopUp {
-    position: absolute;
-    z-index: 3;
-} */
-
-/* #Time03 {
-    opacity: 0;
-} */
-
-/* #Time03.active {
-    opacity: 1;
-} */
-
-
-#tentacolobianco,
-#true-holly,
-#Vector-80 {
-    display: block;
 }
 
 .line-container {
@@ -571,7 +504,7 @@ svg {
 }
 
 p {
-    color: pink;
+    color: #CCF3FF;
     padding: 0px 16px;
     text-align: center;
 
@@ -766,6 +699,70 @@ p {
     animation: fade-in 0.8s 1.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
+
+
+#arrows {
+    opacity: 0;
+    filter: blur(4px);
+    animation: scale 1000s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+#arrows:nth-child(1) {
+    animation: fade-in 1.3s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(2) {
+    animation: fade-in 1.3s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(7) {
+    animation: fade-in 1.3s 1.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(8) {
+    animation: fade-in 1.3s 2.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(9) {
+    animation: fade-in 1.3s 2.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(10) {
+    animation: fade-in 1.3s 2.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(11) {
+    animation: fade-in 1.3s 2.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(12) {
+    animation: fade-in 1.3s 2.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(13) {
+    animation: fade-in 1.3s 2.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(14) {
+    animation: fade-in 1.3s 3.0s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(15) {
+    animation: fade-in 1.3s 3.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(16) {
+    animation: fade-in 1.3s 3.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(17) {
+    animation: fade-in 1.3s 3.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#arrows:nth-child(18) {
+    animation: fade-in 1.3s 3.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
 /*
 ███████╗██████╗ ███████╗ ██████╗ ██████╗███████╗
 ██╔════╝██╔══██╗██╔════╝██╔════╝██╔════╝██╔════╝
@@ -779,122 +776,82 @@ p {
 
 
 footer {
-    position: sticky;
-    bottom: 0;
     z-index: 0;
-    height: 5vh;
-    padding-top: 100vw;
+    bottom: 0;
+    font-family: Philosopher;
+    margin: 0;
 }
 
 
+#thankyou {
+    color: #CCF3FF;
+    text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    font-family: Philosopher;
+    justify-content: center;
+    padding-top: 27.5vw;
+    padding-bottom: 27.5vw;
+    font-size: 3vw;
+}
+
+.restart-label {
+    display: flex;
+    justify-content: center;
+    padding-top: 5vw;
+}
+
+#restart {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    padding: 0.6em 1em;
+
+    font-size: 1.2vw;
+    text-decoration: none;
 
 
+    border-radius: 9999px;
+    border-color: white;
+    border-width: 0.07vw;
+    border-style: solid;
+    color: #fff;
 
+    transition: 10ms;
+}
 
-.blok:nth-of-type(odd) {
+#restart:hover {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    padding: 0.6em 1em;
+
+    font-size: 1.2vw;
+
     background-color: white;
+    border-radius: 9999px;
+    border-width: 0.07vw;
+    border-style: solid;
+    color: black;
+
+    transition-duration: 500ms;
+    transition-delay: 5ms;
 }
 
-.blok:nth-of-type(even) {
-    background-color: black;
+body {
+    height: 300vh;
 }
 
-.paginacontainer {
-    height: 3000px;
-}
 
-/* #Progress
-    ================================================== */
 
-.progress-wrap {
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    height: 46px;
-    width: 46px;
-    cursor: pointer;
-    display: block;
-    border-radius: 50px;
-    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
-    z-index: 10000;
+
+#down {
     opacity: 0;
-    visibility: hidden;
-    transform: translateY(15px);
+    padding-bottom: 5vw;
 }
 
-.progress-wrap.active-progress {
-    opacity: 1;
-    visibility: visible;
-}
-
-.progress-wrap::after {
-    position: absolute;
-    content: '\e84b';
-    text-align: center;
-    line-height: 46px;
-    color: rgba(0, 0, 0, 0.3);
-    /* --- Pijl kleur --- */
-    left: 0;
-    top: 0;
-    height: 46px;
-    width: 46px;
-    cursor: pointer;
-    display: block;
-    z-index: 1;
-}
-
-.progress-wrap:hover::after {
-    opacity: 0;
-}
-
-.progress-wrap::before {
-    position: absolute;
-    font-family: 'unicons';
-    content: '\e84b';
-    text-align: center;
-    line-height: 46px;
-    font-size: 24px;
-    opacity: 0;
-    background: black;
-    /* --- Pijl hover kleur --- */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    left: 0;
-    top: 0;
-    height: 46px;
-    width: 46px;
-    display: block;
-    z-index: 2;
-}
-
-.progress-wrap:hover::before {
-    opacity: 1;
-}
-
-.progress-wrap svg path {
-    fill: none;
-}
-
-.progress-wrap svg.progress-circle path {
-    stroke: rgba(0, 0, 0, 0.2);
-    stroke-width: 4;
-    box-sizing: border-box;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.down {
+/* #down {
     position: relative;
     display: inline-flex;
     padding: 10px 30px;
@@ -905,7 +862,7 @@ footer {
     overflow: hidden;
 }
 
-.down::before {
+#down::before {
     content: '';
     position: absolute;
     top: var(--y);
@@ -918,7 +875,68 @@ footer {
     transition: width 0.5s, height 0.5s, ;
 }
 
-.down:hover::before {
+#down:hover::before {
     width: 300px;
     height: 300px;
+} */
+
+
+/* 
+██████╗██╗   ██╗██████╗ ███████╗ ██████╗ ██████╗ 
+██╔════╝██║   ██║██╔══██╗██╔════╝██╔═══██╗██╔══██╗
+██║     ██║   ██║██████╔╝███████╗██║   ██║██████╔╝
+██║     ██║   ██║██╔══██╗╚════██║██║   ██║██╔══██╗
+╚██████╗╚██████╔╝██║  ██║███████║╚██████╔╝██║  ██║
+ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
+*/
+
+
+.cursorwhite {
+    cursor: url(/assets/cursor/cursorwhite.svg), auto;
+}
+
+#background {
+    cursor: url(/assets/cursor/cursorwhite.svg), auto;
+}
+
+
+#Emo01 {
+    cursor: url(/assets/cursor/cursorred.svg), auto;
+}
+
+#Emo02 {
+    cursor: url(/assets/cursor/cursorblue.svg), auto;
+}
+
+#Emo03 {
+    cursor: url(/assets/cursor/medusina.svg), auto;
+}
+
+#Emo04 {
+    cursor: url(/assets/cursor/medusinared.svg), auto;
+}
+
+#Emo05 {
+    cursor: url(/assets/cursor/medusina.svg), auto;
+}
+
+#Emo06 {
+    cursor: url(/assets/cursor/medusinared.svg), auto;
+}
+
+#Emo07 {
+    cursor: url(/assets/cursor/medusina.svg), auto;
+}
+
+#Emo08 {
+    cursor: url(/assets/cursor/medusinared.svg), auto;
+}
+
+#Emo09 {
+    cursor: url(/assets/cursor/medusina.svg), auto;
+}
+
+
+#restart {
+    cursor: url(/assets/cursor/medusinamini.svg), auto;
 }
