@@ -12,6 +12,7 @@
 
 @font-face {
     font-family: 'PhilosopherBold';
+    font-weight: 700;
     src: url("fonts/Philosopher-Bold.ttf") format("truetype");
 }
 
@@ -321,7 +322,7 @@ header {
     font-family: Helvetica;
     font-weight: 300;
     line-height: 1.8vw;
-    font-size: 1.5vw;
+    font-size: 1vw;
 
     padding-bottom: 1vw;
 }
@@ -822,21 +823,21 @@ footer {
     text-align: center;
     font-family: Philosopher;
     justify-content: center;
-    padding-top: 20vw;
+    padding-top: 9vw;
     font-size: 5vw;
-    padding-bottom: 1vw;
 }
 
 #category {
     color: #CCF3FF;
     text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     text-align: center;
     font-family: Philosopher;
     justify-content: center;
     font-size: 1.2vw;
     padding-bottom: 0.3vw;
+    padding-top: 2vw;
 }
 
 #people {
@@ -848,60 +849,62 @@ footer {
     font-style: normal;
     font-weight: 300;
     line-height: 1.5;
-    padding-bottom: 100px;
 }
 
 
 
 .sponsor {
     display: flex;
-    justify-content: center;
-    padding-top: 5vw;
+    justify-content: right;
+    padding-top: 3vw;
     padding-left: 3vw;
+    padding-right: 3vw;
+
+
 }
 
 #svgs {
-    padding: 0 16px;
+    padding: 0 1vw;
 }
 
 .polimi a img {
     display: flex;
-    height: 10vw;
+    height: 6vw;
     transition: 1s;
     padding-bottom: 3vw;
 }
 
 .density a img {
     display: flex;
-    height: 10vw;
+    height: 6vw;
     transition: 1s;
     padding-bottom: 3vw;
 }
 
 .necst a img {
     display: flex;
-    height: 10vw;
+    height: 6vw;
     transition: 1s;
     padding-bottom: 3vw;
 }
 
 .polimi a img:hover {
     display: flex;
-    height: 10.5vw;
+    height: 6.5vw;
     transition: 1s;
     padding-bottom: 3vw;
 }
 
 .density a img:hover {
     display: flex;
-    height: 10.5vw;
+    height: 6.5vw;
     transition: 1s;
     padding-bottom: 3vw;
 }
 
 .necst a img:hover {
     display: flex;
-    height: 10.5vw;
+    height: 6.5vw;
     transition: 1s;
     padding-bottom: 3vw;
 }
