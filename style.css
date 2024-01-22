@@ -932,43 +932,43 @@ footer {
 
 
 .cursorwhite {
-    cursor: url(/assets/cursor/cursorwhite.svg), auto;
+    cursor: url(/assets/cursor/cursorwhite.svg), pointer;
 }
 
 #background {
-    cursor: url(/assets/cursor/cursorwhite.svg), auto;
+    cursor: url(/assets/cursor/cursorwhite.svg), pointer;
 }
 
 
 #tristezza {
-    cursor: url(/assets/cursor/tristezzaword.svg), auto;
+    cursor: url(/assets/cursor/tristezzaword.svg), pointer;
 }
 
 #gioia {
-    cursor: url(/assets/cursor/gioiaword.svg), auto;
+    cursor: url(/assets/cursor/gioiaword.svg), pointer;
 }
 
 #serenita {
-    cursor: url(/assets/cursor/serenitaword.svg), auto;
+    cursor: url(/assets/cursor/serenitaword.svg), pointer;
 }
 
 #amore {
-    cursor: url(/assets/cursor/amoreword.svg), auto;
+    cursor: url(/assets/cursor/amoreword.svg), pointer;
 }
 
 #morte {
-    cursor: url(/assets/cursor/morteword.svg), auto;
+    cursor: url(/assets/cursor/morteword.svg), pointer;
 }
 
 #neutro {
-    cursor: url(/assets/cursor/cursorwhite.svg), auto;
+    cursor: url(/assets/cursor/cursorwhite.svg), pointer;
 
 }
 
 #restart {
-    cursor: url(/assets/cursor/medusinamini.svg), auto;
+    cursor: url(/assets/cursor/medusinamini.svg), pointer;
 }
 
 #emotions {
-    cursor: url(/assets/cursor/cursorwhitemini.svg), auto;
+    cursor: url(/assets/cursor/cursorwhitemini.svg), pointer;
 }
