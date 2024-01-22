@@ -300,6 +300,7 @@ header {
     justify-content: center;
     font-size: 1vw;
 
+    padding-bottom: 15vw;
 }
 
 
@@ -403,6 +404,7 @@ svg text {
 #plot,
 #story,
 .legenda,
+#explanation,
 #time01,
 #time02,
 #time03,
@@ -768,19 +770,6 @@ footer {
 }
 
 
-#thankyou {
-    color: #CCF3FF;
-    text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
-    font-style: normal;
-    font-weight: 400;
-    text-align: center;
-    font-family: Philosopher;
-    justify-content: center;
-    padding-top: 27.5vw;
-    padding-bottom: 27.5vw;
-    font-size: 3vw;
-}
-
 .restart-label {
     display: flex;
     justify-content: center;
@@ -824,9 +813,100 @@ footer {
     transition-delay: 5ms;
 }
 
-body {
-    height: 300vh;
+
+#labname {
+    color: #CCF3FF;
+    text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    font-family: Philosopher;
+    justify-content: center;
+    padding-top: 20vw;
+    font-size: 5vw;
+    padding-bottom: 1vw;
 }
+
+#category {
+    color: #CCF3FF;
+    text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    font-family: Philosopher;
+    justify-content: center;
+    font-size: 1.2vw;
+    padding-bottom: 0.3vw;
+}
+
+#people {
+    color: #CCF3FF;
+    text-align: center;
+    text-shadow: 0px 4px 41px rgba(0, 0, 0, 0.34);
+    font-family: Helvetica;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5;
+    padding-bottom: 100px;
+}
+
+
+
+.sponsor {
+    display: flex;
+    justify-content: center;
+    padding-top: 5vw;
+    padding-left: 3vw;
+}
+
+#svgs {
+    padding: 0 16px;
+}
+
+.polimi a img {
+    display: flex;
+    height: 10vw;
+    transition: 1s;
+    padding-bottom: 3vw;
+}
+
+.density a img {
+    display: flex;
+    height: 10vw;
+    transition: 1s;
+    padding-bottom: 3vw;
+}
+
+.necst a img {
+    display: flex;
+    height: 10vw;
+    transition: 1s;
+    padding-bottom: 3vw;
+}
+
+.polimi a img:hover {
+    display: flex;
+    height: 10.5vw;
+    transition: 1s;
+    padding-bottom: 3vw;
+}
+
+.density a img:hover {
+    display: flex;
+    height: 10.5vw;
+    transition: 1s;
+    padding-bottom: 3vw;
+}
+
+.necst a img:hover {
+    display: flex;
+    height: 10.5vw;
+    transition: 1s;
+    padding-bottom: 3vw;
+}
+
+
 
 
 
@@ -886,6 +966,6 @@ body {
     cursor: url(/assets/cursor/medusinamini.svg), auto;
 }
 
-.legenda {
+#emotions {
     cursor: url(/assets/cursor/cursorwhitemini.svg), auto;
 }
